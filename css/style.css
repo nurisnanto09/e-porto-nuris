@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
 
-body, html {
-    overflow-x: hidden;
-}
 /* =========================================
    VARIABEL WARNA (CSS VARIABLES)
 ========================================= */
@@ -163,6 +160,7 @@ main {
     box-shadow: var(--shadow-md);
     list-style: none;
     padding: 10px 0;
+    margin-top: -10px;
     z-index: 1000;
     opacity: 0;
     transform: translateY(-10px);
@@ -384,74 +382,6 @@ main {
     .btn-hero {
         padding: 10px 20px;
         font-size: 0.9rem;
-    }
-}
-
-/* HAMBURGER */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-}
-
-.hamburger span {
-    width: 25px;
-    height: 3px;
-    background: var(--text-light);
-    border-radius: 3px;
-    transition: 0.3s;
-}
-
-.hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-.hamburger.active span:nth-child(2) {
-    opacity: 0;
-}
-.hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
-}
-
-/* MOBILE MENU */
-@media (max-width: 576px) {
-    .hamburger {
-        display: flex;
-    }
-
-    .nav-menu {
-        display: flex; 
-        position: absolute;
-        top: 80px; /* Pastikan sesuai tinggi navbar Anda */
-        
-        /* PERBAIKAN DI SINI */
-        left: 0; /* Ubah dari right: 0 menjadi left: 0 */
-        width: 100%;
-        box-sizing: border-box; /* Mencegah elemen melebar melewati layar */
-        
-        flex-direction: column;
-        background: var(--glass-bg, rgba(255, 255, 255, 0.9)); 
-        backdrop-filter: blur(20px);
-        border-top: 1px solid var(--glass-border, rgba(255, 255, 255, 0.2));
-        padding: 20px 0;
-        z-index: 999;
-
-        /* hidden by default */
-        opacity: 0;
-        transform: translateY(-20px);
-        pointer-events: none;
-        transition: 0.3s;
-    }
-
-    .nav-menu.active {
-        opacity: 1;
-        transform: translateY(0);
-        pointer-events: auto;
-    }
-
-    .nav-menu li {
-        text-align: center;
-        padding: 10px 0;
     }
 }
 /* =========================================

@@ -16,34 +16,29 @@
 
     <header>
         <nav class="glass-navbar">
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="nav-brand">
+                <div class="logo-placeholder"><img src="img/logo uny.png" alt=""></div>
+                <span class="nav-title">E-Portofolio</span>
             </div>
-        <div class="nav-brand">
-            <div class="logo-placeholder"><img src="img/logo uny.png" alt=""></div>
-            <span class="nav-title">E-Portofolio</span>
-        </div>
         
-        <ul class="nav-menu">
-            <li><a href="index.html" class="tombol-animasi">Beranda</a></li>
-            <li><a href="profil.html" class="tombol-animasi">Profil</a></li>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="tombol-animasi">Beranda</a></li>
+                <li><a href="profil.html" class="tombol-animasi">Profil</a></li>
             
-            <li class="dropdown">
-                <a href="#" class="dropbtn" class="tombol-animasi">Artefak ▾</a>
-                <ul class="dropdown-content">
-                    <li><a href="#">Hasil Observasi</a></li>
-                    <li><a href="#">Modul Ajar</a></li>
-                    <li><a href="#">LKPD</a></li>
-                    <li><a href="#">Dokumentasi</a></li>
-                </ul>
-            </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn" class="tombol-animasi">Artefak ▾</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Hasil Observasi</a></li>
+                        <li><a href="#">Modul Ajar</a></li>
+                        <li><a href="#">LKPD</a></li>
+                        <li><a href="#">Dokumentasi</a></li>
+                    </ul>
+                </li>
             
-            <li><a href="#" class="tombol-animasi"> Refleksi</a></li>
-            <li><a href="#" class="tombol-animasi">Model Guru</a></li>
-        </ul>
-    </nav>
+                <li><a href="#" class="tombol-animasi"> Refleksi</a></li>
+                <li><a href="#" class="tombol-animasi">Model Guru</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
@@ -150,18 +145,6 @@
             <p>&copy; 2026 Nur Isnanto Nugroho. All Rights Reserved.</p>
         </div>
     </footer>
-
-    <script>
-        const hamburger = document.getElementById("hamburger");
-const navMenu = document.querySelector(".nav-menu");
-
-hamburger.addEventListener("click", () => {
-    // Menambah/menghapus class 'active' pada tombol hamburger (untuk animasi X)
-    hamburger.classList.toggle("active");
-    // Menambah/menghapus class 'active' pada menu navigasi (untuk memunculkan menu)
-    navMenu.classList.toggle("active");
-});
-    </script>
 
 </body>
 </html>
