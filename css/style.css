@@ -78,6 +78,7 @@ main {
     align-items: center;
     gap: 15px;
     color: var(--text-light);
+    margin-left: 70px;
 }
 
 
@@ -96,8 +97,40 @@ main {
     display: flex;
     list-style: none;
     gap: 25px;
+    margin-right: 70px;
 }
 
+.tombol-animasi {
+  padding: 10px 20px;
+  font-size: 100px;
+  background-color: transparent;
+  border: 5;
+  cursor: pointer;
+  position: relative; /* Wajib ada untuk memposisikan garis */
+}
+
+/* Membuat garis bawah virtual yang awalnya disembunyikan */
+.tombol-animasi::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var( --accent-blue);
+  transform: scaleX(0); /* Ukuran awal 0 (tidak terlihat) */
+  transform: scaleY(0); /* Memperlebar garis menjadi 100% */
+  transform-origin: bottom right; 
+  transition: transform 0.5s ease-out; /* Kecepatan animasi */
+}
+
+/* Menampilkan garis saat tombol dipencet */
+.tombol-animasi:hover::after,
+.tombol-animasi:active::after {
+  transform: scaleX(1); /* Memperlebar garis menjadi 100% */
+  transform: scaleY(1); /* Memperlebar garis menjadi 100% */
+  transform-origin: bottom left;
+}
 .nav-menu li a {
     color: var(--text-light);
     text-decoration: none;
@@ -174,8 +207,8 @@ main {
 }
 
 .circle-1 {
-    width: 30vw;
-    height: 30vw;
+    width: 20vw;
+    height: 20vw;
     background-color: var(--accent-blue); 
     top: -10%;
     left: -10%;
@@ -183,8 +216,8 @@ main {
 }
 
 .circle-2 {
-    width: 25vw;
-    height: 25vw;
+    width: 15vw;
+    height: 15vw;
     background-color: var(--accent-purple); 
     bottom: -20%;
     right: -10%;
@@ -192,8 +225,8 @@ main {
 }
 
 .circle-3 {
-    width: 35vw;
-    height: 35vw;
+    width: 25vw;
+    height: 25vw;
     background-color: var(--accent-cyan); 
     top: 30%;
     left: 40%;
@@ -227,10 +260,9 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 1300px; 
-    width: 95%;
-    
-    margin-left: 200px;
+    width: 1920px;
+    margin-top: -100px;
+    margin-left: 300px;
 }
 
 .glass-card {
@@ -240,18 +272,18 @@ main {
     border: 1px solid var(--glass-border);
     box-shadow: var(--shadow-lg);
     border-radius: 25px;
-    width: 1500px;
-    height: 420px;
-    padding: 10px 60px 20px 200px; 
+    width: 1000px;
+    height: 560px;
+    padding: 80px 80px 100px 200px; 
     color: var(--text-light);
     position: relative;
-    margin-top: -130px;
+    margin-top: -440px;
 }
 
 .pin {
     position: absolute;
-    width: 12px;
-    height: 12px;
+    width: 18px;
+    height: 18px;
     background: radial-gradient(circle, var(--pin-light), var(--pin-dark));
     border-radius: 50%;
     box-shadow: 0 2px 4px rgba(0,0,0,0.3);
@@ -277,15 +309,25 @@ main {
 
 .image-container {
     z-index: 3; 
-    margin-right: 0; 
-    margin-left: -220px; 
+    margin-right: 0px; 
+    margin-left: -290px; 
 }
 
 .image-container img {
-    width: 500px;
+    width: 700px;
     margin-right: 100px;
     height: auto;
     filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5)); 
+    animation: geserKanan 2s ease-in-out infinite alternate;
+}
+
+@keyframes geserKanan {
+  0% {
+    transform: translateY(-20px); /* Titik awal */
+  }
+  100% {
+    transform: translateY(20Spx); /* Titik akhir: bergeser 300px ke kanan */
+  }
 }
 
 .content {
@@ -294,11 +336,12 @@ main {
 }
 
 .content strong {
+    font-size: 64px;
     color: #e4d502;
 }
 
 .content p {
-    width: 640px;
+    width: 660px;
     color: #ffffff;
 }
 
@@ -520,7 +563,7 @@ main {
     background-color: var(--bg-main); /* Menggunakan variabel warna agar konsisten */
     z-index: 2;
     width: 100%; /* Diubah menjadi 100% agar background full dari kiri ke kanan */
-    margin: -20px 0 0 0; /* Margin disesuaikan agar menempel sempurna */
+    margin: -560px 0 0 0; /* Margin disesuaikan agar menempel sempurna */
     text-align: center;
     padding: 80px 5% 100px 5%; /* Padding kiri-kanan 5% agar konten tidak mepet layar */
 }
@@ -537,8 +580,8 @@ main {
     display: grid;
     /* Membuat grid responsif, otomatis menyesuaikan layar */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-    max-width: 1300px; /* Dibatasi 1300px agar sejajar dengan kartu profil di atas */
+    gap: 64px;
+    max-width: 1200px; /* Dibatasi 1300px agar sejajar dengan kartu profil di atas */
     margin: 0 auto; /* Posisi otomatis di tengah layar */
 }
 
@@ -612,6 +655,12 @@ main {
     transform: scale(1.1);
 }
 
+@media (max-width: 576px) {
+ .artefak-section{
+    margin: 0;
+ }
+}
+
 /* =========================================
    STYLING FOOTER 
 ========================================= */
@@ -630,8 +679,8 @@ main {
     display: grid;
     /* Membuat grid 3 kolom yang otomatis merespons layar HP */
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-    max-width: 1300px;
+    gap: 120px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -709,3 +758,42 @@ main {
     font-size: 0.85rem;
     margin: 0;
 }
+
+
+
+/* Gaya Khusus Ikon Media Sosial */
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.1); /* Transparansi putih */
+    backdrop-filter: blur(8px); /* Efek blur kaca */
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Efek Hover */
+.social-icon:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-8px); /* Ikon melompat sedikit ke atas */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-color: #fff;
+}
+
+/* Warna Ikon Saat Hover (Opsional, untuk memperjelas identitas sosmed) */
+.social-icon:hover .fa-facebook-f { color: #1877F2; }
+.social-icon:hover .fa-instagram { color: #E4405F; }
+.social-icon:hover .fa-tiktok { color: #00f2ea; }
+.social-icon:hover .fa-youtube { color: #FF0000; }
