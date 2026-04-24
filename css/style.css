@@ -45,12 +45,9 @@ main {
     background-color: var(--bg-main);
     min-height: 100vh;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    overflow-x: hidden; 
-    position: relative;
-    padding-top: 80px; 
+    justify-content: center;
+    padding: 100px 20px 60px;
 }
 
 /* =========================================
@@ -229,7 +226,7 @@ main {
     justify-content: center;
     max-width: 1300px; 
     width: 95%;
-    flex-direction: row-reverse; /* Foto di kiri, Teks di kanan */
+    
     margin-left: 200px;
 }
 
@@ -300,6 +297,48 @@ main {
 .content p {
     width: 640px;
     color: #ffffff;
+}
+
+@media (max-width: 576px) {
+    main {
+        padding: 90px 15px 40px;
+    }
+
+    .image-container img {
+        width: 340px;
+        margin-left: 100px;
+    }
+
+    .glass-card {
+        padding: 25px 15px;
+        border-radius: 18px;
+    }
+
+    .content{
+        margin-left: 3px;
+    }
+
+    .glass-card h1 {
+        font-size: 10px;
+    }
+
+    .glass-card p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .nav-title {
+        font-size: 1rem;
+    }
+
+    .hero-buttons {
+        gap: 10px;
+    }
+
+    .btn-hero {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
 }
 
 /* =========================================
