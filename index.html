@@ -16,6 +16,11 @@
 
     <header>
         <nav class="glass-navbar">
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         <div class="nav-brand">
             <div class="logo-placeholder"><img src="img/logo uny.png" alt=""></div>
             <span class="nav-title">E-Portofolio</span>
@@ -131,6 +136,18 @@
             <p>&copy; 2026 Nur Isnanto Nugroho. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <script>
+        const hamburger = document.getElementById("hamburger");
+const navMenu = document.querySelector(".nav-menu");
+
+hamburger.addEventListener("click", () => {
+    // Menambah/menghapus class 'active' pada tombol hamburger (untuk animasi X)
+    hamburger.classList.toggle("active");
+    // Menambah/menghapus class 'active' pada menu navigasi (untuk memunculkan menu)
+    navMenu.classList.toggle("active");
+});
+    </script>
 
 </body>
 </html>
