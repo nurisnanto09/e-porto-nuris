@@ -1,0 +1,712 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
+/* =========================================
+   VARIABEL WARNA (CSS VARIABLES)
+========================================= */
+:root {
+    /* Warna Latar & Teks Dasar */
+    --bg-main: #0f172a; /* Slate dark / Abu-abu kebiruan sangat gelap */
+    --text-light: #f8fafc; /* Putih sedikit keabu-abuan agar tidak silau di mata */
+    --text-muted: #94a3b8; /* Abu-abu redup elegan untuk teks paragraf/pendukung */
+    --text-dark: #020617; /* Hitam pekat (jika ada elemen terang yang butuh teks gelap) */
+    --text-hover: #38bdf8; /* Biru cerah menyala untuk efek sentuh/hover */
+
+    /* Warna Aksen (Logo & Lingkaran Abstrak) - Dibuat lebih pastel/neon agar menyala */
+    --accent-blue: #60a5fa; /* Biru pastel cerah */
+    --accent-purple: #a78bfa; /* Ungu neon lembut */
+    --accent-cyan: #2dd4bf; /* Teal/Cyan segar */
+
+    /* Warna Efek Kaca (Glassmorphism) - Transparansi diturunkan agar lebih "sleek" */
+    --glass-bg: rgba(255, 255, 255, 0.03); /* Efek kaca sangat tipis */
+    --glass-bg-hover: rgba(255, 255, 255, 0.08); /* Sedikit lebih terang saat di-hover */
+    --glass-border: rgba(255, 255, 255, 0.08); /* Garis tepi kaca samar-samar */
+    --glass-border-strong: rgba(255, 255, 255, 0.15);
+    
+    /* Warna Elemen Kecil (Pin) */
+    --pin-light: #cbd5e1;
+    --pin-dark: #334155;
+
+    /* Bayangan (Shadows) - Bayangan dibuat lebih pekat karena latar sudah gelap */
+    --shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.5);
+    --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.6);
+    --shadow-lg: 0 25px 50px rgba(0, 0, 0, 0.7);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+main {
+    background-color: var(--bg-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden; 
+    position: relative;
+    padding-top: 80px; 
+}
+
+/* =========================================
+   STYLING NAVBAR GLASSMODE
+========================================= */
+.glass-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--glass-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    z-index: 999; 
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--text-light);
+}
+
+
+
+.logo-placeholder img{
+    width: 50px;
+}
+
+.nav-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-menu li a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.nav-menu li a:hover {
+    color: var(--text-hover);
+}
+
+/* === DROPDOWN STYLING === */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 150%;
+    left: -20px;
+    background: var(--glass-bg-hover);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    min-width: 200px;
+    border-radius: 15px;
+    border: 1px solid var(--glass-border-strong);
+    box-shadow: var(--shadow-md);
+    list-style: none;
+    padding: 10px 0;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dropdown-content li {
+    padding: 0;
+}
+
+.dropdown-content li a {
+    display: block;
+    padding: 12px 25px;
+    font-size: 0.95rem;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.dropdown-content li:last-child a {
+    border-bottom: none;
+}
+
+.dropdown-content li a:hover {
+    background: var(--glass-border);
+    color: var(--text-light);
+}
+
+/* =========================================
+   DEKORASI ABSTRAK FULL LAYAR 
+========================================= */
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px); 
+    z-index: 1;
+    opacity: 0.8;
+}
+
+.circle-1 {
+    width: 30vw;
+    height: 30vw;
+    background-color: var(--accent-blue); 
+    top: -10%;
+    left: -10%;
+    animation: gerakAbstrak1 20s infinite alternate ease-in-out;
+}
+
+.circle-2 {
+    width: 25vw;
+    height: 25vw;
+    background-color: var(--accent-purple); 
+    bottom: -20%;
+    right: -10%;
+    animation: gerakAbstrak2 25s infinite alternate ease-in-out;
+}
+
+.circle-3 {
+    width: 35vw;
+    height: 35vw;
+    background-color: var(--accent-cyan); 
+    top: 30%;
+    left: 40%;
+    animation: gerakAbstrak3 22s infinite alternate ease-in-out;
+}
+
+@keyframes gerakAbstrak1 {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(40vw, 30vh) scale(1.2); }
+    100% { transform: translate(80vw, 10vh) scale(0.8); }
+}
+
+@keyframes gerakAbstrak2 {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-50vw, -40vh) scale(1.3); }
+    100% { transform: translate(-20vw, -80vh) scale(0.9); }
+}
+
+@keyframes gerakAbstrak3 {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-30vw, 40vh) scale(0.8); }
+    100% { transform: translate(20vw, -30vh) scale(1.4); }
+}
+/* =========================================
+   STYLING FOOTER 
+========================================= */
+.glass-footer {
+    background: #020617; /* Warna dasar dark mode transparan */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid var(--glass-border);
+    color: var(--text-light);
+    padding: 70px 5% 20px 5%;
+    position: relative;
+    z-index: 2; /* Berada di atas animasi bola cahaya */
+}
+
+.footer-content {
+    display: grid;
+    /* Membuat grid 3 kolom yang otomatis merespons layar HP */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.footer-col h3 {
+    color: var(--accent-cyan);
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.footer-col p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Styling Navigasi Cepat */
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Menambahkan panah kecil keren sebelum teks link */
+.footer-links a::before {
+    content: "▸";
+    color: var(--accent-purple);
+    font-size: 1.2rem;
+    transition: transform 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--text-hover);
+    transform: translateX(5px); /* Efek teks bergeser sedikit ke kanan saat disentuh */
+}
+
+/* Styling Peta (Maps) */
+.map-container {
+    margin-top: 15px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease;
+}
+
+.map-container:hover {
+    transform: scale(1.02); /* Peta sedikit membesar saat disentuh */
+    box-shadow: 0 5px 15px rgba(96, 165, 250, 0.3); /* Cahaya biru dari belakang peta */
+}
+
+/* Copyright Bottom */
+.footer-bottom {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid var(--glass-border-strong);
+}
+
+.footer-bottom p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+/* =========================================
+   HALAMAN PROFIL: STYLING KONTEN
+========================================= */
+.profile-container {
+    width: 95%;
+    max-width: 1200px;
+    margin: 40px auto 100px auto;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 80px; /* Jarak antar bagian (Profil, Jejak, Hobi) */
+}
+
+/* --- BAGIAN 1: KARTU PROFIL UTAMA --- */
+.glass-card-profile {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-lg);
+    border-radius: 25px;
+    padding: 60px;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+.profile-img-box {
+    flex-shrink: 0;
+    width: 350px;
+}
+
+.profile-img-box img {
+    margin-top: -120px;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--glass-border-strong);
+    object-fit: cover;
+}
+
+.profile-info {
+    color: var(--text-light);
+}
+
+.profile-info p{
+    color: var(--accent-blue);
+}
+
+.profile-quote p{
+    color: var(--text-light);
+}
+
+.section-badge {
+    display: inline-block;
+    background: rgba(96, 165, 250, 0.15);
+    color: var(--accent-blue);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    border: 1px solid rgba(96, 165, 250, 0.3);
+    font-weight: 500;
+}
+
+.profile-name {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.profile-subtitle {
+    color: var(--accent-cyan);
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.profile-bio p {
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* Blockquote ala Glassmorphism */
+.profile-quote {
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 4px solid var(--accent-purple);
+    padding: 20px 25px;
+    margin: 30px 0;
+    border-radius: 0 15px 15px 0;
+    font-style: italic;
+    color: var(--text-light);
+}
+
+.profile-quote i {
+    color: var(--accent-purple);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.profile-quote footer {
+    margin-top: 10px;
+    font-weight: 600;
+    color: var(--accent-blue);
+}
+
+/* Tombol Kembali */
+.btn-back {
+    display: inline-block;
+    padding: 10px 25px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    color: var(--text-light);
+    text-decoration: none;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.btn-back:hover {
+    background: var(--text-light);
+    color: var(--text-dark);
+    transform: translateX(-5px); /* Bergeser ke kiri */
+}
+
+/* --- TYPOGRAPHY UMUM --- */
+.text-center {
+    text-align: center;
+    width: 100%;
+}
+
+.section-title-glow {
+    color: var(--text-light);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 50px;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+/* --- BAGIAN 2: TIMELINE PENDIDIKAN --- */
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Garis lurus timeline */
+.timeline::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    top: 0;
+    bottom: 0;
+    left: 30px; 
+    border-radius: 2px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+    padding-left: 80px; /* Memberi ruang untuk garis dan titik */
+}
+
+/* Titik poin di garis */
+.timeline-dot {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    background: var(--accent-cyan);
+    border: 4px solid var(--bg-main);
+    border-radius: 50%;
+    left: 21px; /* Disesuaikan agar pas di tengah garis */
+    top: 20px;
+    box-shadow: 0 0 15px var(--accent-cyan);
+    z-index: 2;
+}
+
+/* Kartu Kaca Kecil untuk Jejak & Hobi */
+.glass-card-small {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    padding: 30px;
+    border-radius: 20px;
+    color: var(--text-light);
+    transition: transform 0.3s, background 0.3s;
+}
+
+.glass-card-small:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.timeline-content h3 {
+    color: var(--accent-blue);
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+}
+
+.timeline-content h4 {
+    font-weight: 400;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: var(--text-light);
+}
+
+.timeline-date {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+    color: var(--text-muted);
+}
+
+.timeline-content p {
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* --- BAGIAN 3: HOBI & MINAT --- */
+.hobbies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.hobby-card {
+    text-align: center;
+}
+
+.hobby-icon {
+    font-size: 3rem;
+    color: var(--accent-purple);
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 15px rgba(167, 139, 250, 0.4));
+    transition: transform 0.3s;
+}
+
+.hobby-card:hover .hobby-icon {
+    transform: scale(1.1);
+}
+
+.hobby-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.hobby-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* =========================================
+   RESPONSIVE (Layar Tablet & HP)
+========================================= */
+@media (max-width: 992px) {
+    /* Navbar dan Lainnya */
+    .glass-navbar {
+        padding: 0 15px;
+        overflow-x: auto;
+        justify-content: flex-start;
+        gap: 30px;
+    }
+    
+    .nav-brand, .nav-menu {
+        flex-shrink: 0;
+    }
+
+    /* Penyesuaian Profil Utama */
+    .glass-card-profile {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .profile-img-box {
+        width: 250px;
+    }
+    
+    .profile-name {
+        font-size: 2.2rem;
+    }
+
+    .profile-bio p {
+        text-align: center;
+    }
+
+    .profile-quote {
+        text-align: left;
+    }
+
+    /* Penyesuaian Timeline di HP */
+    .timeline::before {
+        left: 15px; /* Garis digeser lebih ke kiri */
+    }
+
+    .timeline-item {
+        padding-left: 50px; /* Ruang teks disesuaikan */
+    }
+
+    .timeline-dot {
+        left: 6px; /* Titik digeser */
+    }
+}
+
+/* =========================================
+   STYLING BANNER PROFIL
+========================================= */
+.banner-section {
+    width: 100%; /* Memenuhi lebar layar */
+    height: 400px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* Margin negatif menarik banner ke atas agar pas di bawah navbar (mengisi ruang padding) */
+    margin-top: -80px; 
+    padding-top: 80px; 
+}
+
+.banner-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Memastikan foto tidak gepeng */
+    z-index: 1;
+}
+
+/* Trik Gradien: Atasnya transparan (0.3), bawahnya menjadi warna background pekat (1)
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(15, 23, 42, 0.4) 0%, var(--bg-main) 100%);
+    z-index: 2;
+} */
+
+.banner-title-wrapper {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    padding: 30px 60px;
+    margin-top: 30px;
+    /* Menggunakan ulang variabel glassmorphism kamu
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-lg);
+    border-radius: 20px; */
+}
+
+.banner-title-wrapper h2 {
+    font-size: 2.8rem;
+    color: var(--text-light);
+    margin-bottom: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.banner-title-wrapper p {
+    color: var(--accent-cyan);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* Responsif Banner untuk HP */
+@media (max-width: 992px) {
+    .banner-section {
+        height: 300px;
+    }
+    .banner-title-wrapper {
+        padding: 20px 30px;
+        width: 90%;
+    }
+    .banner-title-wrapper h2 {
+        font-size: 1.8rem;
+    }
+    .banner-title-wrapper p {
+        font-size: 0.95rem;
+    }
+}

@@ -1,0 +1,602 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
+/* =========================================
+   VARIABEL WARNA (CSS VARIABLES)
+========================================= */
+:root {
+    /* Warna Latar & Teks Dasar */
+    --bg-main: #0f172a; /* Slate dark / Abu-abu kebiruan sangat gelap */
+    --text-light: #f8fafc; /* Putih sedikit keabu-abuan agar tidak silau di mata */
+    --text-muted: #94a3b8; /* Abu-abu redup elegan untuk teks paragraf/pendukung */
+    --text-dark: #020617; /* Hitam pekat (jika ada elemen terang yang butuh teks gelap) */
+    --text-hover: #38bdf8; /* Biru cerah menyala untuk efek sentuh/hover */
+
+    /* Warna Aksen (Logo & Lingkaran Abstrak) - Dibuat lebih pastel/neon agar menyala */
+    --accent-blue: #60a5fa; /* Biru pastel cerah */
+    --accent-purple: #a78bfa; /* Ungu neon lembut */
+    --accent-cyan: #2dd4bf; /* Teal/Cyan segar */
+
+    /* Warna Efek Kaca (Glassmorphism) - Transparansi diturunkan agar lebih "sleek" */
+    --glass-bg: rgba(255, 255, 255, 0.03); /* Efek kaca sangat tipis */
+    --glass-bg-hover: rgba(255, 255, 255, 0.08); /* Sedikit lebih terang saat di-hover */
+    --glass-border: rgba(255, 255, 255, 0.08); /* Garis tepi kaca samar-samar */
+    --glass-border-strong: rgba(255, 255, 255, 0.15);
+    
+    /* Warna Elemen Kecil (Pin) */
+    --pin-light: #cbd5e1;
+    --pin-dark: #334155;
+
+    /* Bayangan (Shadows) - Bayangan dibuat lebih pekat karena latar sudah gelap */
+    --shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.5);
+    --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.6);
+    --shadow-lg: 0 25px 50px rgba(0, 0, 0, 0.7);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+main {
+    background-color: var(--bg-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden; 
+    position: relative;
+    padding-top: 80px; 
+}
+
+/* =========================================
+   STYLING NAVBAR GLASSMODE
+========================================= */
+.glass-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--glass-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    z-index: 999; 
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--text-light);
+}
+
+
+
+.logo-placeholder img{
+    width: 50px;
+}
+
+.nav-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-menu li a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.nav-menu li a:hover {
+    color: var(--text-hover);
+}
+
+/* === DROPDOWN STYLING === */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 150%;
+    left: -20px;
+    background: var(--glass-bg-hover);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    min-width: 200px;
+    border-radius: 15px;
+    border: 1px solid var(--glass-border-strong);
+    box-shadow: var(--shadow-md);
+    list-style: none;
+    padding: 10px 0;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dropdown-content li {
+    padding: 0;
+}
+
+.dropdown-content li a {
+    display: block;
+    padding: 12px 25px;
+    font-size: 0.95rem;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.dropdown-content li:last-child a {
+    border-bottom: none;
+}
+
+.dropdown-content li a:hover {
+    background: var(--glass-border);
+    color: var(--text-light);
+}
+
+/* =========================================
+   DEKORASI ABSTRAK FULL LAYAR 
+========================================= */
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px); 
+    z-index: 1;
+    opacity: 0.8;
+}
+
+.circle-1 {
+    width: 30vw;
+    height: 30vw;
+    background-color: var(--accent-blue); 
+    top: -10%;
+    left: -10%;
+    animation: gerakAbstrak1 20s infinite alternate ease-in-out;
+}
+
+.circle-2 {
+    width: 25vw;
+    height: 25vw;
+    background-color: var(--accent-purple); 
+    bottom: -20%;
+    right: -10%;
+    animation: gerakAbstrak2 25s infinite alternate ease-in-out;
+}
+
+.circle-3 {
+    width: 35vw;
+    height: 35vw;
+    background-color: var(--accent-cyan); 
+    top: 30%;
+    left: 40%;
+    animation: gerakAbstrak3 22s infinite alternate ease-in-out;
+}
+
+@keyframes gerakAbstrak1 {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(40vw, 30vh) scale(1.2); }
+    100% { transform: translate(80vw, 10vh) scale(0.8); }
+}
+
+@keyframes gerakAbstrak2 {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-50vw, -40vh) scale(1.3); }
+    100% { transform: translate(-20vw, -80vh) scale(0.9); }
+}
+
+@keyframes gerakAbstrak3 {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-30vw, 40vh) scale(0.8); }
+    100% { transform: translate(20vw, -30vh) scale(1.4); }
+}
+
+/* =========================================
+   KONTEN UTAMA & EFEK KACA 
+========================================= */
+.container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1300px; 
+    width: 95%;
+    flex-direction: row-reverse; /* Foto di kiri, Teks di kanan */
+    margin-left: 200px;
+}
+
+.glass-card {
+    background: var(--glass-bg); 
+    backdrop-filter: blur(20px); 
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-lg);
+    border-radius: 25px;
+    width: 1500px;
+    height: 420px;
+    padding: 10px 60px 20px 200px; 
+    color: var(--text-light);
+    position: relative;
+    margin-top: -130px;
+}
+
+.pin {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: radial-gradient(circle, var(--pin-light), var(--pin-dark));
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+.pin-tl { top: 20px; left: 20px; }
+.pin-tr { top: 20px; right: 20px; }
+.pin-bl { bottom: 20px; left: 20px; }
+.pin-br { bottom: 20px; right: 20px; }
+
+.glass-card h1 {
+    font-size: 3.5rem; 
+    line-height: 1.1;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.glass-card p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+.image-container {
+    z-index: 3; 
+    margin-right: 0; 
+    margin-left: -220px; 
+}
+
+.image-container img {
+    width: 500px;
+    margin-right: 100px;
+    height: auto;
+    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5)); 
+}
+
+.content {
+    margin-top: 13px;
+    margin-left: -70px;
+}
+
+.content strong {
+    color: #e4d502;
+}
+
+.content p {
+    width: 640px;
+    color: #ffffff;
+}
+
+/* =========================================
+   STYLING TOMBOL HERO (MAIN SECTION)
+========================================= */
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px; /* Jarak dari paragraf ke tombol */
+}
+
+/* Gaya Dasar Tombol */
+.btn-hero {
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Tombol Utama (Menyala) */
+.btn-primary {
+    background: var(--accent-blue);
+    color: var(--text-dark); /* Menggunakan teks gelap agar kontras dengan tombol terang */
+    font-weight: 600;
+    box-shadow: 0 0 15px rgba(96, 165, 250, 0.5); /* Efek glow */
+}
+
+.btn-primary:hover {
+    transform: translateY(-5px); /* Tombol terangkat saat di-hover */
+    box-shadow: 0 0 25px rgba(96, 165, 250, 0.8); /* Glow membesar */
+    background: #7bb0ff; /* Warna sedikit lebih terang saat disentuh */
+}
+
+/* Tombol Sekunder (Gaya Kaca) */
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-light);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+    border-color: var(--accent-cyan);
+    color: var(--accent-cyan);
+}
+
+/* =========================================
+   RESPONSIVE (Digabung dan Dirapikan)
+========================================= */
+@media (max-width: 992px) {
+    .glass-navbar {
+        padding: 0 15px;
+        overflow-x: auto;
+        justify-content: flex-start;
+        gap: 30px;
+    }
+    
+    .nav-brand, .nav-menu {
+        flex-shrink: 0;
+    }
+    
+    .container {
+        flex-direction: column-reverse; /* Foto di atas, Card di bawah */
+        text-align: center;
+        margin-top: 80px;
+        margin-bottom: 50px;
+        margin-left: 0; /* Menghapus margin kiri agar responsif di tengah */
+    }
+    
+    .image-container {
+        margin-left: 0; 
+        margin-right: 0;
+        margin-bottom: -100px; /* Menarik foto agar menimpa card dari atas */
+    }
+    
+    .image-container img {
+        max-width: 350px; /* Disesuaikan agar pas di layar kecil */
+    }
+    
+    .glass-card {
+        padding: 120px 30px 40px 30px; 
+        max-width: 100%;
+        width: 90%; /* Mengganti width statis 1500px agar fluid di HP */
+        height: auto; /* Membiarkan tinggi otomatis menyesuaikan konten */
+        margin-top: 0;
+    }
+    
+    .glass-card h1 {
+        font-size: 2.2rem;
+    }
+    
+    .content p {
+        width: 100%; /* Memastikan paragraf tidak melebar keluar batas di HP */
+    }
+}
+
+/* =========================================
+   STYLING BAGIAN ARTEFAK PPL 1
+========================================= */
+.artefak-section {
+    position: relative;
+    background-color: var(--bg-main); /* Menggunakan variabel warna agar konsisten */
+    z-index: 2;
+    width: 100%; /* Diubah menjadi 100% agar background full dari kiri ke kanan */
+    margin: -20px 0 0 0; /* Margin disesuaikan agar menempel sempurna */
+    text-align: center;
+    padding: 80px 5% 100px 5%; /* Padding kiri-kanan 5% agar konten tidak mepet layar */
+}
+
+.section-title {
+    color: var(--text-light);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 50px;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.cards-grid {
+    display: grid;
+    /* Membuat grid responsif, otomatis menyesuaikan layar */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1300px; /* Dibatasi 1300px agar sejajar dengan kartu profil di atas */
+    margin: 0 auto; /* Posisi otomatis di tengah layar */
+}
+
+/* Modifikasi dari Glass Card khusus untuk Grid */
+.artefak-card {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    padding: 40px 30px;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.artefak-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+    background: var(--glass-bg-hover);
+}
+
+.artefak-card h3 {
+    font-size: 1.8rem;
+    color: var(--text-light);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+/* Mengubah warna teks paragraf menjadi putih pekat */
+.artefak-card p {
+    font-size: 1rem;
+    color: #ffffff;
+    margin-bottom: 30px;
+    width: 100%;
+    font-weight: 300; 
+}
+
+/* Tombol Glassmorphism */
+.btn-glass {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 500;
+    padding: 12px 25px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.btn-glass:hover {
+    background: var(--bg-main);
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 15px var(--accent-blue);
+    color: #fff;
+}
+
+/* Styling untuk Ikon Baru */
+.icon-wrapper {
+    font-size: 3.5rem; 
+    color: var(--accent-cyan); /* KOREKSI: Typo diperbaiki agar warna ikon menyala */
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 0 15px rgba(45, 212, 191, 0.4)); 
+}
+
+/* Efek ikon membesar sedikit saat kartu disentuh (hover) */
+.artefak-card:hover .icon-wrapper {
+    transform: scale(1.1);
+}
+
+/* =========================================
+   STYLING FOOTER 
+========================================= */
+.glass-footer {
+    background: #020617; /* Warna dasar dark mode transparan */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid var(--glass-border);
+    color: var(--text-light);
+    padding: 70px 5% 20px 5%;
+    position: relative;
+    z-index: 2; /* Berada di atas animasi bola cahaya */
+}
+
+.footer-content {
+    display: grid;
+    /* Membuat grid 3 kolom yang otomatis merespons layar HP */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.footer-col h3 {
+    color: var(--accent-cyan);
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.footer-col p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Styling Navigasi Cepat */
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Menambahkan panah kecil keren sebelum teks link */
+.footer-links a::before {
+    content: "▸";
+    color: var(--accent-purple);
+    font-size: 1.2rem;
+    transition: transform 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--text-hover);
+    transform: translateX(5px); /* Efek teks bergeser sedikit ke kanan saat disentuh */
+}
+
+/* Styling Peta (Maps) */
+.map-container {
+    margin-top: 15px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease;
+}
+
+.map-container:hover {
+    transform: scale(1.02); /* Peta sedikit membesar saat disentuh */
+    box-shadow: 0 5px 15px rgba(96, 165, 250, 0.3); /* Cahaya biru dari belakang peta */
+}
+
+/* Copyright Bottom */
+.footer-bottom {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid var(--glass-border-strong);
+}
+
+.footer-bottom p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin: 0;
+}
