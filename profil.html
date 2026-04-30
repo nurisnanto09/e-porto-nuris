@@ -41,8 +41,7 @@
     </nav>
     </header>
 
-    <main>
-        <div class="banner-section">
+    <div class="banner-section">
             <img src="img/banner1.png" alt="Banner E-Portofolio" class="banner-image">
             
             <div class="banner-overlay"></div>
@@ -52,6 +51,8 @@
                 <p>Mengenal lebih dekat sosok pendidik di balik E-Portofolio ini.</p>
             </div>
         </div>
+
+    <main>
         <div class="profile-container">
         
         <section class="profile-hero glass-card-profile">
@@ -179,6 +180,15 @@
             <p>&copy; 2026 Nur Isnanto Nugroho. All Rights Reserved.</p>
         </div>
     </footer>
-
+    <script>
+    const banner = document.querySelector('.banner-section');
+    const main = document.querySelector('main');
+    window.addEventListener('scroll', () => {
+        let scrollValue = window.scrollY;
+        let maxOverlap = 180; // piksel maksimal overlap
+        let overlap = Math.min(scrollValue * 0.6, maxOverlap); // *0.6 biar smooth
+        main.style.marginTop = `-${60 + overlap}px`; // 60px awal + tambahan scroll
+    });
+</script>
 </body>
 </html>

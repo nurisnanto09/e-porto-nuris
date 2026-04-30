@@ -49,6 +49,9 @@ main {
     overflow-x: hidden; 
     position: relative;
     padding-top: 80px; 
+    z-index: 2;
+    margin-top: -60px;
+    transition: margin-top 0.2s ease-out;
 }
 
 /* =========================================
@@ -339,6 +342,7 @@ main {
     display: flex;
     gap: 50px;
     align-items: center;
+    z-index: 2;
 }
 
 .profile-img-box {
@@ -633,14 +637,14 @@ main {
 .banner-section {
     width: 100%; /* Memenuhi lebar layar */
     height: 400px;
-    position: relative;
+    position: sticky;
+    top:0;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    /* Margin negatif menarik banner ke atas agar pas di bawah navbar (mengisi ruang padding) */
-    margin-top: -80px; 
-    padding-top: 80px; 
+    z-index: 1;
+    overflow: hidden;
 }
 
 .banner-image {

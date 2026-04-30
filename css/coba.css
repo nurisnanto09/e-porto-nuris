@@ -1,0 +1,650 @@
+/* =========================================
+   BASE SETUP & VARIABLES ( Abstract Theme )
+========================================= */
+:root {
+    /* Immersive Palet warna - Vibrant & Deep */
+    --bg-base: #020307; /* Super Deep Black */
+    --text-primary: #ffffff;
+    --text-secondary: #a1a1aa;
+    
+    --accent-1: #06b6d4; /* Cyan */
+    --accent-2: #3b82f6; /* Blue */
+    --accent-3: #8b5cf6; /* Purple */
+    
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6);
+    
+    --perspective: 1000px; /* For dimensional cards tilt */
+}
+
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Syne', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-base);
+}
+
+body {
+    color: var(--text-primary);
+    overflow-x: hidden;
+    line-height: 1.6;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M98 98l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zm-2 0l-2-2h2v2zM0 0h2v2H0V0zm0 2h2v2H0V2zm0 2h2v2H0V4zm0 2h2v2H0V6zm0 2h2v2H0V8zm0 2h2v2H0V10zm0 2h2v2H0V12zm0 2h2v2H0V14zm0 2h2v2H0V16zm0 2h2v2H0V18zm0 2h2v2H0V20zm0 2h2v2H0V22zm0 2h2v2H0V24zm0 2h2v2H0V26zm0 2h2v2H0V28zm0 2h2v2H0V30zm0 2h2v2H0V32zm0 2h2v2H0V34zm0 2h2v2H0V36zm0 2h2v2H0V38zm0 2h2v2H0V40zm0 2h2v2H0V42zm0 2h2v2H0V44zm0 2h2v2H0V46zm0 2h2v2H0V48zm0 2h2v2H0V50zm0 2h2v2H0V52zm0 2h2v2H0V54zm0 2h2v2H0V56zm0 2h2v2H0V58zm0 2h2v2H0V60zm0 2h2v2H0V62zm0 2h2v2H0V64zm0 2h2v2H0V66zm0 2h2v2H0V68zm0 2h2v2H0V70zm0 2h2v2H0V72zm0 2h2v2H0V74zm0 2h2v2H0V76zm0 2h2v2H0V78zm0 2h2v2H0V80zm0 2h2v2H0V82zm0 2h2v2H0V84zm0 2h2v2H0V86zm0 2h2v2H0V88zm0 2h2v2H0V90zm0 2h2v2H0V92zm0 2h2v2H0V94zm0 2h2v2H0V96zm0 2h2v2H0V98zM96 0l-2 2h2V0zM0 96l2 2H0v-2zm94-4l-2 2h2v-2zm-2-2l-2 2h2v-2zm-2-2l-2 2h2v-2zm-2-2l-2 2h2v-2zm-2-2l-2 2h2v-2zm-2-2l-2 2h2v-2zm-2-2l-2 2h2v-2zm-2-2l-2 2h2v-2zm-2-2l-2 2h2v-2zm-2-2l-2 2h2v-2zm-2-2l-2 2h2v-2zm-2-2l-2 2h2v-2zm-2-2l-2 2h2v-2zm-2-2l-2 2h2v-2zm-2-2l-2 2h2v-2zm-2-2l-2 2h2v-2zm-2-2l-2 2h2v-2zm-2-2l-2 2h2v-2zm-2-2l-2 2h2v-2zm-2-2l-2 2h2v-2zm-2-2l-2 2h2v-2zm-2-2l-2 2h2v-2zm-2-2l-2 2h2v-2zm-2-2l-2 2h2v-2zm-2-2l-2 2h2v-2zm-2-2l-2 2h2v-2zm-2-2l-2 2h2v-2zm-2-2l-2 2h2v-2zm-2-2l-2 2h2v-2zm-2-2l-2 2h2v-2zm-2-2l-2 2h2v-2zm-2-2l-2 2h2v-2zm-2-2l-2 2h2v-2zm-2-2l-2 2h2v-2zm-2-2l-2 2h2v-2zm-2-2l-2 2h2v-2zm-2-2l-2 2h2v-2zm-2-2l-2 2h2v-2zm-2-2l-2 2h2v-2zm-2-2l-2 2h2v-2zm-2-2l-2 2h2v-2zm-2-2l-2 2h2v-2zm-2-2l-2 2h2v-2zm-2-2l-2 2h2v-2zm-2-2l-2 2h2v-2zm-2-2l-2 2h2v-2zm-2-2l-2 2h2v-2z'/%3E%3Cpath d='M97 97l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zm-2 0l-2 2h2v-2zM0 0h1v1H0V0zm1 1h1v1H1V1zm1 1h1v1H2V2zm1 1h1v1H3V3zm1 1h1v1H4V4zm1 1h1v1H5V5zm1 1h1v1H6V6zm1 1h1v1H7V7zm1 1h1v1H8V8zm1 1h1v1H9V9zm1 1h1v1H10V10zm1 1h1v1H11V11zm1 1h1v1H12V12zm1 1h1v1H13V13zm1 1h1v1H14V14zm1 1h1v1H15V15zm1 1h1v1H16V16zm1 1h1v1H17V17zm1 1h1v1H18V18zm1 1h1v1H19V19zm1 1h1v1H20V20zm1 1h1v1H21V21zm1 1h1v1H22V22zm1 1h1v1H23V23zm1 1h1v1H24V24zm1 1h1v1H25V25zm1 1h1v1H26V26zm1 1h1v1H27V27zm1 1h1v1H28V28zm1 1h1v1H29V29zm1 1h1v1H30V30zm1 1h1v1H31V31zm1 1h1v1H32V32zm1 1h1v1H33V33zm1 1h1v1H34V34zm1 1h1v1H35V35zm1 1h1v1H36V36zm1 1h1v1H37V37zm1 1h1v1H38V38zm1 1h1v1H39V39zm1 1h1v1H40V40zm1 1h1v1H41V41zm1 1h1v1H42V42zm1 1h1v1H43V43zm1 1h1v1H44V44zm1 1h1v1H45V45zm1 1h1v1H46V46zm1 1h1v1H47V47zm1 1h1v1H48V48zm1 1h1v1H49V49zm1 1h1v1H50V50zm1 1h1v1H51V51zm1 1h1v1H52V52zm1 1h1v1H53V53zm1 1h1v1H54V54zm1 1h1v1H55V55zm1 1h1v1H56V56zm1 1h1v1H57V57zm1 1h1v1H58V58zm1 1h1v1H59V59zm1 1h1v1H60V60zm1 1h1v1H61V61zm1 1h1v1H62V62zm1 1h1v1H63V63zm1 1h1v1H64V64zm1 1h1v1H65V65zm1 1h1v1H66V66zm1 1h1v1H67V67zm1 1h1v1H68V68zm1 1h1v1H69V69zm1 1h1v1H70V70zm1 1h1v1H71V71zm1 1h1v1H72V72zm1 1h1v1H73V73zm1 1h1v1H74V74zm1 1h1v1H75V75zm1 1h1v1H76V76zm1 1h1v1H77V77zm1 1h1v1H78V78zm1 1h1v1H79V79zm1 1h1v1H80V80zm1 1h1v1H81V81zm1 1h1v1H82V82zm1 1h1v1H83V83zm1 1h1v1H84V84zm1 1h1v1H85V85zm1 1h1v1H86V86zm1 1h1v1H87V87zm1 1h1v1H88V88zm1 1h1v1H89V89zm1 1h1v1H90V90zm1 1h1v1H91V91zm1 1h1v1H92V92zm1 1h1v1H93V93zm1 1h1v1H94V94zm1 1h1v1H95V95zm1 1h1v1H96V96zm1 1h1v1H97V97zm1 1h1v1H98V98zm1 1h1v1H99V99zm96 0h2v2h-2V0zm0 2h2v2h-2V2zm0 4h2v2h-2V6zm0 4h2v2h-2V10zm0 4h2v2h-2V14zm0 4h2v2h-2V18zm0 4h2v2h-2V22zm0 4h2v2h-2V26zm0 4h2v2h-2V30zm0 4h2v2h-2V34zm0 4h2v2h-2V38zm0 4h2v2h-2V42zm0 4h2v2h-2V46zm0 4h2v2h-2V50zm0 4h2v2h-2V54zm0 4h2v2h-2V58zm0 4h2v2h-2V62zm0 4h2v2h-2V66zm0 4h2v2h-2V70zm0 4h2v2h-2V74zm0 4h2v2h-2V78zm0 4h2v2h-2V82zm0 4h2v2h-2V86zm0 4h2v2h-2V90zm0 4h2v2h-2V94zm0 4h2v2h-2V98z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-size: 80px 80px; /* Subtle noise texture */
+}
+
+/* Custom modern scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-base);
+}
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-1);
+}
+
+/* =========================================
+   INTERACTIVE LAYERS ( Mouse Trail & Blobs )
+========================================= */
+.mouse-trail {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    pointer-events: none;
+    z-index: 1000;
+}
+.mouse-trail::after {
+    content: '';
+    position: absolute;
+    top: var(--y, 0); left: var(--x, 0);
+    width: 15px; height: 15px;
+    background: var(--accent-1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 40px 10px rgba(6, 182, 212, 0.4), 
+                0 0 80px 20px rgba(6, 182, 212, 0.2);
+    opacity: 0.8;
+}
+
+.background-canvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.blob-container {
+    width: 100%; height: 100%;
+    transform: translate(var(--xOffset, 0), var(--yOffset, 0));
+    will-change: transform;
+}
+
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.3;
+    animation: blob-flow infinite alternate-reverse ease-in-out;
+}
+
+.blob-1 { width: 50vw; height: 50vw; background: var(--accent-1); top: -20%; left: -10%; animation-duration: 20s; }
+.blob-2 { width: 40vw; height: 40vw; background: var(--accent-2); bottom: -10%; right: -10%; animation-duration: 25s; }
+.blob-3 { width: 30vw; height: 30vw; background: var(--accent-3); top: 40%; left: 40%; opacity: 0.15; animation-duration: 30s; }
+.blob-4 { width: 45vw; height: 45vw; background: #ea580c; /* Orange accent */ bottom: 40%; left: 10%; opacity: 0.1; animation-duration: 35s; }
+
+@keyframes blob-flow {
+    0% { transform: scale(1) translate(0, 0) rotate(0deg); border-radius: 50%; }
+    33% { transform: scale(1.1) translate(100px, 50px) rotate(120deg); border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+    66% { transform: scale(0.9) translate(-50px, 100px) rotate(240deg); border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+    100% { transform: scale(1) translate(0, 0) rotate(360deg); border-radius: 50%; }
+}
+
+/* =========================================
+   PILL NAV & FROSTED EFFECT 
+========================================= */
+header { width: 100%; display: flex; justify-content: center; }
+
+.frosted-nav {
+    position: fixed;
+    top: 30px;
+    width: 90%;
+    max-width: 1000px;
+    height: 65px;
+    background: rgba(15, 15, 20, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px 0 25px;
+    z-index: 999;
+    box-shadow: var(--glass-shadow);
+}
+
+.nav-brand {
+    display: flex; align-items: center; gap: 10px;
+    color: var(--text-primary); font-weight: 700; font-size: 1.1rem;
+}
+.nav-brand img { width: 35px; height: auto; }
+
+.nav-links {
+    display: flex; list-style: none; gap: 25px;
+}
+.nav-links a {
+    color: var(--text-secondary); text-decoration: none;
+    font-weight: 500; font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+.nav-links a.active, .nav-links a:hover {
+    color: var(--text-primary);
+}
+
+.nav-btn-glow {
+    background: #ffffff;
+    color: #000000;
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+.nav-btn-glow:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255,255,255,0.4);
+}
+
+/* =========================================
+   HERO SECTION ( Dynamic & Immersive )
+========================================= */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 150px 5% 50px;
+    position: relative;
+    z-index: 2;
+    gap: 60px;
+}
+
+.hero-content { flex: 1.2; }
+
+.badge-immersive {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    padding: 10px 18px;
+    border-radius: 30px;
+    font-size: 0.85rem; font-weight: 500;
+    color: var(--accent-1);
+    margin-bottom: 30px;
+    backdrop-filter: blur(10px);
+}
+.dot {
+    width: 8px; height: 8px; background: var(--accent-1); border-radius: 50%;
+    box-shadow: 0 0 10px var(--accent-1);
+}
+
+.hero-title {
+    font-size: 4rem; 
+    line-height: 1.1;
+    margin-bottom: 25px;
+    font-weight: 800;
+    letter-spacing: -2px;
+}
+
+/* Shimmering Text Effect on title and headings */
+.shimmer-text {
+    background: linear-gradient(135deg, white 10%, rgba(255,255,255,0.4) 30%, white 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    animation: shimmer-effect 6s infinite linear;
+}
+@keyframes shimmer-effect { to { background-position: 200% center; } }
+
+/* Gradient Text is a glitch hover effect */
+.gradient-text {
+    background: linear-gradient(90deg, var(--accent-1), var(--accent-2), var(--accent-3));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.gradient-text.is-glitch:hover {
+    animation: glitch-immersive 0.3s infinite;
+}
+@keyframes glitch-immersive {
+    0% { transform: skewX(-3deg) translate(-2px, 2px); filter: hue-rotate(90deg); }
+    20% { transform: skewX(3deg) translate(2px, -2px); filter: hue-rotate(0deg); }
+    40% { transform: skewX(-3deg) translate(-2px, 2px); }
+    60% { transform: skewX(3deg) translate(2px, -2px); filter: hue-rotate(180deg); }
+    80% { transform: skewX(-1deg) translate(-1px, 1px); }
+    100% { transform: skewX(0); filter: hue-rotate(0deg); }
+}
+
+.hero-desc {
+    font-size: 1.15rem;
+    font-weight: 400;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    max-width: 550px;
+}
+
+.hero-action-group { display: flex; align-items: center; gap: 40px; }
+
+.btn-immersive-glow {
+    background: linear-gradient(135deg, var(--accent-2), var(--accent-3));
+    color: white;
+    padding: 15px 35px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    position: relative;
+    transition: all 0.3s;
+}
+.btn-immersive-glow:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.4);
+}
+.btn-immersive-glow::before {
+    content: '';
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: inherit; border-radius: inherit; filter: blur(15px);
+    opacity: 0.6; z-index: -1; transition: opacity 0.3s;
+}
+.btn-immersive-glow:hover::before { opacity: 1; }
+
+.tech-stack-immersive {
+    display: flex; gap: 15px;
+    font-size: 1.6rem;
+    color: var(--text-secondary);
+}
+.tech-stack-immersive i:hover {
+    color: var(--text-primary);
+    transform: translateY(-5px);
+    transition: 0.3s ease;
+}
+
+/* Visual Hero Kanan */
+.hero-visual { flex: 0.8; display: flex; justify-content: center; position: relative; }
+
+.image-immersive-wrapper {
+    position: relative;
+    width: 100%; max-width: 450px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%);
+    border: 1px solid var(--glass-border);
+    border-radius: 40px;
+    display: flex; justify-content: center; align-items: flex-end;
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: blur(10px);
+}
+
+.hero-img {
+    width: 120%; /* Melampaui wrapper untuk kesan dynamic */
+    height: auto;
+    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.8));
+    animation: img-float 6s ease-in-out infinite;
+    transform-origin: bottom center;
+}
+@keyframes img-float { 0%, 100% { transform: translateY(0) scale(1.0); } 50% { transform: translateY(-15px) scale(1.02); } }
+
+.immersive-floating-card {
+    position: absolute;
+    background: rgba(10, 10, 15, 0.8);
+    border: 1px solid var(--glass-border);
+    padding: 12px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem; font-weight: 500;
+    display: flex; align-items: center; gap: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    backdrop-filter: blur(15px);
+    animation: card-float 5s ease-in-out infinite alternate;
+}
+.immersive-floating-card i { color: var(--accent-1); }
+.card-1 { top: 50px; left: -40px; animation-delay: 1s; }
+.card-2 { bottom: 80px; right: -30px; animation-delay: 2s; }
+
+@keyframes card-float { 0% { transform: translateY(0); } 100% { transform: translateY(-10px); } }
+
+/* =========================================
+   GENERAL SECTION STYLING ( Text is glitch )
+========================================= */
+.section-header { margin-bottom: 60px; max-width: 600px; }
+.section-header.text-center { margin-left: auto; margin-right: auto; }
+
+.section-subtitle {
+    color: var(--accent-1);
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.title {
+    font-size: 3rem; 
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.title.is-glitch:hover { animation: glitch-immersive 0.3s infinite; }
+
+.section-header p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-top: 15px;
+    line-height: 1.8;
+}
+
+/* =========================================
+   ARTEFAK SECTION ( dimensional Cards )
+========================================= */
+.artefak-section {
+    padding: 100px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative; z-index: 2;
+}
+
+.card-layout-immersive {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+.info-ppl-immersive p {
+    color: var(--text-light); /* Lebih terang */
+    font-size: 1.15rem;
+    line-height: 1.9;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+.info-ppl-immersive p strong { color: var(--accent-1); font-weight: 600; }
+
+.stats-immersive {
+    display: flex; gap: 30px; flex-wrap: wrap;
+}
+.stat-item-immersive {
+    display: flex; flex-direction: column; align-items: flex-start;
+}
+.stat-icon-immersive {
+    font-size: 1.6rem;
+    color: var(--accent-1);
+    background: rgba(6, 182, 212, 0.1);
+    width: 60px; height: 60px;
+    display: flex; justify-content: center; align-items: center;
+    border-radius: 18px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+.stat-item-immersive:hover .stat-icon-immersive {
+    transform: scale(1.1) rotate(5deg);
+}
+.stat-item-immersive h4 { font-size: 1.25rem; font-weight: 700; margin-bottom: 5px; color: var(--text-primary); }
+.stat-item-immersive span { color: var(--text-secondary); font-size: 0.9rem; }
+
+/* Tumpukan Kartu Dimensi Kanan */
+.dimensional-cards-wrapper {
+    display: flex; flex-direction: column; gap: 20px;
+    perspective: var(--perspective); /* Crucial for dimensional effect */
+}
+
+.dimensional-card {
+    background: rgba(15, 15, 20, 0.8);
+    border: 1px solid var(--glass-border);
+    border-radius: 30px;
+    backdrop-filter: blur(15px);
+    text-decoration: none;
+    color: white;
+    position: relative; overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    transform-style: preserve-3d;
+}
+
+.dimensional-card:hover {
+    transform: rotateX(5deg) rotateY(-5deg) translateY(-5px); /* tilt and lift */
+    background: rgba(30, 30, 35, 0.9);
+    box-shadow: -15px 20px 40px rgba(0,0,0,0.5), 0 0 20px rgba(6, 182, 212, 0.3);
+}
+
+.dimensional-card-content {
+    padding: 30px;
+    position: relative; z-index: 2;
+    transform: translateZ(20px); /* Lift content inside card */
+}
+
+.dimensional-card-icon {
+    position: absolute; top: 30px; left: 30px;
+    font-size: 2rem; color: var(--accent-1);
+    background: rgba(6, 182, 212, 0.1);
+    width: 70px; height: 70px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    transition: 0.3s;
+}
+.dimensional-card-content h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 10px; margin-top: 80px; color: var(--text-primary); }
+.dimensional-card-content p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px; }
+
+.dimensional-card-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 0.9rem; font-weight: 600; color: var(--accent-1);
+    transition: 0.3s;
+}
+.dimensional-card:hover .dimensional-card-link {
+    transform: translateX(5px);
+    color: #fff;
+}
+
+/* Background gradient expansion on hover */
+.dimensional-card-glow {
+    position: absolute; top: 0; right: 0; width: 0; height: 0;
+    transition: all 0.6s ease;
+    z-index: 1; border-radius: 50%;
+    filter: blur(50px); opacity: 0.3;
+}
+.dimensional-card:hover .dimensional-card-glow {
+    width: 200px; height: 200px;
+    top: -50px; right: -50px;
+}
+.bg-gradient-1 { background-image: radial-gradient(var(--accent-1), transparent); }
+.bg-gradient-2 { background-image: radial-gradient(var(--accent-2), transparent); }
+.bg-gradient-3 { background-image: radial-gradient(var(--accent-3), transparent); }
+
+/* =========================================
+   DOKUMENTASI GALLERY ( Horizontal Scroll )
+========================================= */
+.gallery-section { padding: 100px 0; max-width: 100vw; overflow: hidden; }
+
+.gallery-immersive {
+    position: relative; width: 100vw;
+    padding: 0 5%; margin-top: 50px;
+}
+
+.gallery-track-immersive {
+    display: flex; gap: 30px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 5%;
+    padding-bottom: 30px; /* Space for hidden scrollbar */
+    /* Hide default scrollbar */
+    -ms-overflow-style: none;  scrollbar-width: none; 
+}
+.gallery-track-immersive::-webkit-scrollbar { display: none; }
+
+.gallery-card-immersive {
+    min-width: 450px;
+    height: 600px;
+    border-radius: 30px;
+    overflow: hidden;
+    scroll-snap-align: center;
+    position: relative;
+    border: 1px solid var(--glass-border);
+}
+
+.gallery-card-immersive img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+.gallery-card-immersive:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-card-info-immersive {
+    position: absolute; bottom: 0; left: 0; width: 100%;
+    padding: 50px 30px 30px;
+    background: linear-gradient(to top, rgba(0,0,0,1), transparent);
+}
+.gallery-card-info-immersive h4 { font-size: 1.8rem; font-weight: 700; margin-bottom: 8px; color: var(--text-primary); }
+.gallery-card-info-immersive span { color: var(--accent-1); font-size: 1rem; font-weight: 500; }
+
+/* Immersive background Blurred Horizontal Lines top/bottom */
+.blurred-lines-immersive {
+    position: absolute; left: 0; width: 100%; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--glass-border), transparent);
+}
+.blurred-lines-immersive.top { top: -20px; height: 10px; background: radial-gradient(transparent 30%, rgba(6, 182, 212, 0.05)); }
+.blurred-lines-immersive.bottom { bottom: 10px; height: 10px; background: radial-gradient(rgba(139, 92, 246, 0.05), transparent 30%); }
+
+/* =========================================
+   MODERN IMMERSIVE FOOTER
+========================================= */
+.immersive-footer {
+    border-top: 1px solid var(--glass-border);
+    background: rgba(10, 10, 15, 0.8);
+    backdrop-filter: blur(20px);
+    padding: 100px 5% 30px;
+    margin-top: 50px;
+    position: relative; z-index: 2;
+}
+
+.footer-top-immersive { text-align: center; margin-bottom: 80px; }
+.footer-top-immersive .title { font-size: 4rem; }
+.footer-top-immersive p { color: var(--text-secondary); font-size: 1.3rem; margin-bottom: 40px; font-weight: 400; }
+
+.social-links-immersive { display: flex; gap: 20px; justify-content: center; }
+.social-links-immersive a {
+    width: 60px; height: 60px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 1.5rem;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.social-links-immersive a:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-8px) scale(1.1);
+    border-color: var(--accent-1);
+    color: var(--accent-1);
+    box-shadow: 0 10px 20px rgba(6, 182, 212, 0.3);
+}
+
+.footer-bottom-immersive {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 60px;
+    border-top: 1px solid var(--glass-border-strong);
+    padding-top: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-brand-immersive { display: flex; align-items: center; gap: 15px; font-weight: 700; color: var(--text-primary); }
+.footer-brand-immersive img { width: 45px; height: auto; }
+
+.nav-links-immersive { display: flex; flex-direction: column; gap: 15px; }
+.nav-links-immersive a {
+    color: var(--text-secondary); text-decoration: none; font-size: 1rem;
+    transition: all 0.3s ease; display: flex; align-items: center; gap: 10px;
+}
+.nav-links-immersive a::after { content: "→"; color: var(--accent-3); opacity: 0; transition: all 0.3s; transform: translateX(-5px); }
+.nav-links-immersive a:hover { color: var(--text-primary); transform: translateX(5px); }
+.nav-links-immersive a:hover::after { opacity: 1; transform: translateX(0); }
+
+.map-immersive iframe {
+    border-radius: 20px; border: 1px solid var(--glass-border); box-shadow: var(--shadow-sm);
+    margin-bottom: 15px;
+}
+.map-immersive p { display: flex; align-items: center; font-size: 0.9rem; color: var(--text-muted); }
+
+.copyright-immersive {
+    grid-column: span 3; text-align: center;
+    color: var(--text-secondary); font-size: 0.9rem; margin-top: 40px; padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+/* =========================================
+   IMMERSIVE SCROLL REVEAL ACTIVATION
+========================================= */
+.is-scroll-reveal {
+    opacity: 0;
+    transform: translateY(50px) scale(0.95);
+    transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
+    will-change: transform, opacity;
+}
+.is-scroll-reveal.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Specific parallax effect for hero visual on active */
+.hero-visual.is-scroll-reveal.active .image-immersive-wrapper {
+    animation: initial-parallax 1.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+@keyframes initial-parallax {
+    0% { transform: translateY(100px); }
+    100% { transform: translateY(0); }
+}
+
+/* =========================================
+   RESPONSIVE LAYOUT ( Ultra-Modern )
+========================================= */
+@media (max-width: 1024px) {
+    .hero-title { font-size: 3.2rem; }
+    .hero-section { gap: 40px; padding-top: 130px; }
+    .dimensional-cards-wrapper { gap: 15px; }
+}
+
+@media (max-width: 768px) {
+    .pill-nav { width: 95%; padding: 0 15px; height: 60px; }
+    .nav-links { display: none; /* Can be replaced with burger menu */ }
+    
+    .hero-section { flex-direction: column; text-align: center; }
+    .hero-visual { flex: 1; width: 100%; order: -1; margin-bottom: 40px; }
+    .image-immersive-wrapper { max-width: 320px; margin: 0 auto; height: 400px; }
+    .hero-img { width: 110%; }
+    .card-1 { left: -20px; }
+    .card-2 { right: -10px; bottom: 50px; }
+    
+    .hero-desc { margin: 0 auto 30px; }
+    .hero-action-group { flex-direction: column; gap: 20px; justify-content: center; }
+    
+    .card-layout-immersive { grid-template-columns: 1fr; gap: 40px; }
+    .stat-item-immersive { align-items: center; text-align: center; }
+    
+    .gallery-card-immersive { min-width: 300px; height: 450px; }
+    .gallery-card-info-immersive h4 { font-size: 1.4rem; }
+    
+    .footer-top-immersive .title { font-size: 2.8rem; }
+    .footer-bottom-immersive { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+    .copyright-immersive { grid-column: span 1; }
+    .social-links-immersive { justify-content: center; }
+}
