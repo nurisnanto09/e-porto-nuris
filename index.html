@@ -10,34 +10,23 @@
 </head>
 <body>
     <div id="loading-screen">
-    <div class="loader-content">
-        
-        <div class="logo-flipper-container">
-        <div class="logo-flipper">
-            
-            <div class="logo-front">
-            <img src="img/PPL Patbhe.png" alt="Logo Front">
+        <div class="loader-content">
+            <div class="logo-flipper-container">
+                <div class="logo-flipper">
+                    <div class="logo-front">
+                        <img src="img/PPL Patbhe.png" alt="Logo Front">
+                    </div>
+                    <div class="logo-back">
+                        <img src="img/PPL Patbhe.png" alt="Logo Back">
+                    </div>
+                </div>
             </div>
-            
-            <div class="logo-back">
-            <img src="img/PPL Patbhe.png" alt="Logo Back">
+            <div class="loading-text-wave">
+                <span style="--i:1">M</span><span style="--i:2">e</span><span style="--i:3">m</span><span style="--i:4">u</span><span style="--i:5">a</span><span style="--i:6">t</span>
+                <span style="--i:7" class="space"> </span> 
+                <span style="--i:8">.</span><span style="--i:9">.</span><span style="--i:10">.</span>
             </div>
-            
         </div>
-        </div>
-        <div class="loading-text-wave">
-            <span style="--i:1">M</span>
-            <span style="--i:2">e</span>
-            <span style="--i:3">m</span>
-            <span style="--i:4">u</span>
-            <span style="--i:5">a</span>
-            <span style="--i:6">t</span>
-            <span style="--i:7" class="space">&nbsp;</span> 
-            <span style="--i:8">.</span>
-            <span style="--i:9">.</span>
-            <span style="--i:10">.</span>
-        </div>
-    </div>
     </div>
 
     <div class="mouse-trail" id="mouse-trail"></div>
@@ -51,53 +40,67 @@
         </div>
     </div>
 
-    <header>
-        <nav class="glass-navbar">
-            <div class="nav-brand">
-                <div class="logo-placeholder"><img src="img/logo uny.png" alt=""></div>
-                <span class="nav-title">E-Portofolio</span>
+    <header class="header-utama">
+        <div class="top-bar">
+            <div class="top-info">
+                <span><i class="fas fa-map-marker-alt"></i> Sleman, Yogyakarta</span>
+                <span><i class="fas fa-envelope"></i> nurisnanto.2025@student.uny.ac.id</span>
             </div>
-        
-            <ul class="nav-menu">
-                <li><a href="index.html" class="tombol-animasi">Beranda</a></li>
-                <li><a href="profil.html" class="tombol-animasi">Profil</a></li>
-            
+        </div>
+
+        <nav class="navbar glass-navbar">
+            <a href="#" class="logo">
+                <img src="img/logo uny.png" alt="UNY"> 
+                E-Portofolio <span class="badge-ppg">PPG</span>
+            </a>
+
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#beranda" class="nav-item">Beranda</a></li>
+                <li><a href="#profil" class="nav-item">Profil</a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropbtn" class="tombol-animasi">Artefak ▾</a>
-                    <ul class="dropdown-content">
-                        <li><a href="#">Hasil Observasi</a></li>
-                        <li><a href="#">Modul Ajar</a></li>
-                        <li><a href="#">LKPD</a></li>
-                        <li><a href="#">Dokumentasi</a></li>
+                    <a href="#artefak" class="nav-item">Artefak <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#observasi"><i class="fas fa-clipboard-list"></i> Hasil Observasi</a></li>
+                        <li><a href="#modul"><i class="fas fa-book-open"></i> Modul Ajar</a></li>
+                        <li><a href="#lkpd"><i class="fas fa-file-alt"></i> LKPD</a></li>
+                        <li><a href="#dokumentasi"><i class="fas fa-camera"></i> Dokumentasi</a></li>
                     </ul>
                 </li>
-            
-                <li><a href="#" class="tombol-animasi"> Refleksi</a></li>
-                <li><a href="#" class="tombol-animasi">Model Guru</a></li>
+                <li><a href="#refleksi" class="nav-item">Refleksi</a></li>
+                <li><a href="#model-guru" class="nav-item">Model Guru</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
+    <main id="beranda">
         <div class="container">
             <div class="glass-card">
                 <div class="pin pin-tl"></div>
                 <div class="pin pin-bl"></div>
                 <div class="pin pin-br"></div>
                 <div class="content">
-                    <h1>E-Portofolio<br><strong>Nur Isnanto Nugroho</strong></h1></h1>
-                    <p>Mahasiswa Pendidikan Profesi Guru (PPG) Calon Guru di Universitas Negeri Yogyakarta. Selamat datang di ruang rekam jejak E-Portofolio Praktik Pengalaman Lapangan (PPL) 1 saya.</p>
-                    <br>
-                    <br>
-                    <br>
+                    <div class="badge-hero">
+                        <i class="fas fa-graduation-cap"></i> PPG Prajabatan Informatika UNY
+                    </div>
+                    <h1>Memperkaya Potensi Siswa Lewat <br><span class="text-highlight">Inovasi Digital</span></h1>
+                    <p>Saya <strong>Nur Isnanto Nugroho</strong>. Saya percaya pendidikan adalah tentang menyempurnakan bekal yang sudah dimiliki siswa, bukan memulainya dari nol. Selamat datang di ruang rekam jejak PPL 1 saya di SMA Negeri 4 Yogyakarta.</p>
                     <div class="hero-buttons">
-                        <a href="profil.html" class="btn-hero btn-primary">Lihat Profil</a>
-                        <a href="#" class="btn-hero btn-secondary">Hubungi Saya</a>
+                        <a href="#artefak" class="btn-hero btn-primary">
+                            Eksplorasi Artefak <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="profil.html" class="btn-hero btn-secondary">
+                            <i class="fas fa-user"></i> Tentang Saya
+                        </a>
                     </div>
                 </div>
             </div>
             <div class="image-container hero-visual is-parallax">
                 <div class="hero-image">
+                    <img src="img/Logo Uny outlitne.png" alt="Watermark UNY" class="uny-watermark">
                     <img src="img/nuris3.png" alt="Nur Isnanto Nugroho" class="foto-profil">
                 </div>
                  <div class="immersive-floating-card card-1">
@@ -111,78 +114,69 @@
             </div>
         </div>
     </main>
-    
-<!-- =========================================
-         SCROLLING BANNER 4 KOMPETENSI GURU
-    ========================================= -->
-    <section class="scrolling-banner">
-        <div class="banner-track">
-            <!-- Set 1 -->
-            <div class="banner-item"><i class="fas fa-chalkboard-teacher"></i> Kompetensi Pedagogik</div>
-            <div class="banner-item"><i class="fas fa-user-tie"></i> Kompetensi Kepribadian</div>
-            <div class="banner-item"><i class="fas fa-users"></i> Kompetensi Sosial</div>
-            <div class="banner-item"><i class="fas fa-laptop-code"></i> Kompetensi Profesional</div>
-            
-            <!-- Set 2 (Sengaja diduplikat agar efek scroll tidak pernah terputus) -->
-            <div class="banner-item"><i class="fas fa-chalkboard-teacher"></i> Kompetensi Pedagogik</div>
-            <div class="banner-item"><i class="fas fa-user-tie"></i> Kompetensi Kepribadian</div>
-            <div class="banner-item"><i class="fas fa-users"></i> Kompetensi Sosial</div>
-            <div class="banner-item"><i class="fas fa-laptop-code"></i> Kompetensi Profesional</div>
+
+    <section class="statistik-section">
+        <div class="glass-stats-container">
+            <div class="stat-item-glass">
+                <h3 class="stat-number">150+</h3>
+                <p class="stat-label">Jam Mengajar</p>
+            </div>
+            <div class="stat-item-glass">
+                <h3 class="stat-number">250+</h3>
+                <p class="stat-label">Siswa Didampingi</p>
+            </div>
+            <div class="stat-item-glass">
+                <h3 class="stat-number">12+</h3>
+                <p class="stat-label">Artefak & Modul</p>
+            </div>
+            <div class="stat-item-glass">
+                <h3 class="stat-number">4</h3>
+                <p class="stat-label">Bulan PPL 1</p>
+            </div>
         </div>
     </section>
-    
-<section class="artefak-section" id="artefak">
 
-    <h2 class="title-left">Ruang Karya dan Artefak</h2>   
-    <br>
-    <br>
+    <section class="artefak-section" id="artefak">
+        <h2 class="title-left">Ruang Karya dan Artefak</h2>   
         <div class="split-layout">
             <div class="info-ppl">
                 <h3 class="info-subtitle">Pengantar PPL 1</h3>
-                <p>Mendokumentasikan perjalanan dan pengalaman selama melaksanakan Praktik Pengalaman Lapangan (PPL) 1 di <strong>SMA Negeri 4 Yogyakarta</strong>. Dari observasi lingkungan belajar hingga penyusunan perangkat ajar untuk mata pelajaran Informatika.</p>
-                
+                <p>Saya <strong>Nur Isnanto Nugroho</strong>. Mari bersama menyempurnakan bekal siswa dan mewujudkan pembelajaran bermakna. Selamat datang di ruang dokumentasi PPL 1 saya di SMA Negeri 4 Yogyakarta.</p>
                 <div class="stats-container">
-                    <!-- Item 1: Lokasi -->
                     <div class="stat-item">
                         <div class="stat-icon"><i class="fas fa-school"></i></div>
                         <span>Lokasi PPL</span>
                         <h4>SMAN 4 Yogyakarta</h4>
                     </div>
-
-                    <!-- Item 2: Bidang -->
                     <div class="stat-item">
                         <div class="stat-icon"><i class="fas fa-laptop-code"></i></div>
                         <span>Studi Umum</span>
                         <h4>Bidang Informatika</h4>
                     </div>
-
-                    <!-- Item 3: Waktu -->
                     <div class="stat-item">
                         <div class="stat-icon"><i class="fas fa-calendar-check"></i></div>
-                        <span>Waktu Pelaksaan</span>
-                        <h4>13 Maret 26- 30 April 26</h4>
+                        <span>Waktu Pelaksanaan</span>
+                        <h4>13 Mar '26 - 30 Apr '26</h4>
                     </div>
                 </div>
             </div>
 
             <div class="stacked-cards">
-                <a href="#" class="glass-card feature-card">
+                <a href="#observasi" class="glass-card-mini feature-card">
                     <div class="feature-icon"><i class="fas fa-clipboard-list"></i></div>
                     <div class="feature-text">
                         <h3>Hasil Observasi</h3>
                         <p>Laporan pengamatan lingkungan belajar dan karakteristik peserta didik.</p>
                     </div>
                 </a>
-
-                <a href="#" class="glass-card feature-card">
+                <a href="#modul" class="glass-card-mini feature-card">
                     <div class="feature-icon"><i class="fas fa-book-open"></i></div>
                     <div class="feature-text">
                         <h3>Modul Ajar</h3>
                         <p>Perangkat ajar komprehensif yang disusun untuk memandu kelas.</p>
                     </div>
                 </a>
-
-                <a href="#" class="glass-card feature-card">
+                <a href="#lkpd" class="glass-card-mini feature-card">
                     <div class="feature-icon"><i class="fas fa-file-signature"></i></div>
                     <div class="feature-text">
                         <h3>LKPD</h3>
@@ -190,156 +184,298 @@
                     </div>
                 </a>
             </div>
-
         </div>
     </section>
 
-    <section class="dokumentasi-section" id="dokumentasi">
-        <h2 class="section-title">Dokumentasi PPL 1</h2>
+<section class="scrolling-banner">
+    <div class="banner-track">
+        <div class="banner-item"><i class="fas fa-chalkboard-teacher"></i> Kompetensi Pedagogik</div>
+        <div class="banner-item"><i class="fas fa-user-tie"></i> Kompetensi Kepribadian</div>
+        <div class="banner-item"><i class="fas fa-users"></i> Kompetensi Sosial</div>
+        <div class="banner-item"><i class="fas fa-laptop-code"></i> Kompetensi Profesional</div>
         
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="img/banner1.png" alt="Kegiatan Kelas">
-                <div class="gallery-overlay">
-                    <h3>Observasi Kelas</h3>
-                    <p>Pengamatan langsung dinamika belajar peserta didik di kelas.</p>
-                </div>
-            </div>
+        <div class="banner-item"><i class="fas fa-chalkboard-teacher"></i> Kompetensi Pedagogik</div>
+        <div class="banner-item"><i class="fas fa-user-tie"></i> Kompetensi Kepribadian</div>
+        <div class="banner-item"><i class="fas fa-users"></i> Kompetensi Sosial</div>
+        <div class="banner-item"><i class="fas fa-laptop-code"></i> Kompetensi Profesional</div>
+    </div>
+</section>
 
-            <div class="gallery-item">
-                <img src="img/banner2.png" alt="Diskusi Perangkat">
-                <div class="gallery-overlay">
-                    <h3>Diskusi Kelompok</h3>
-                    <p>Penyusunan Modul Ajar dan LKPD secara kolaboratif.</p>
-                </div>
-            </div>
+<section class="dokumentasi-section" id="dokumentasi">
+    
+    <div class="gallery-header">
+        <h2>Dokumentasi PPL 1</h2>
+        <p class="gallery-subtitle">Kumpulan dokumentasi kegiatan selama pelaksanaan praktik mengajar PPL 1 di SMAN 4 Yogyakarta. Mengabadikan momen kolaborasi dan antusiasme peserta didik kelas X.</p>
+    </div>
 
-            <div class="gallery-item">
-                <img src="img/banner3.png" alt="Praktik Mengajar">
-                <div class="gallery-overlay">
-                    <h3>Praktik Mengajar</h3>
-                    <p>Implementasi media pembelajaran interaktif bersama siswa.</p>
-                </div>
+    <div class="expand-grid-container">
+        
+        <div class="expand-image-card active">
+            <img src="img/banner1.png" alt="Pendampingan Siswa">
+            <div class="expand-card-content">
+                <div class="expand-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                <h4>Pendampingan Siswa</h4>
+                <p class="desc">Membimbing siswa dalam praktikum dan pemahaman materi secara langsung di laboratorium.</p>
             </div>
         </div>
 
-        <div class="btn-container">
-            <a href="#" class="btn-glass">Lihat Semua Dokumentasi</a>
+        <div class="expand-image-card">
+            <img src="img/banner2.png" alt="Diskusi Kelompok">
+            <div class="expand-card-content">
+                <div class="expand-icon"><i class="fas fa-users"></i></div>
+                <h4>Diskusi Kelompok</h4>
+                <p class="desc">Siswa sangat antusias berkolaborasi memecahkan masalah pada LKPD interaktif.</p>
+            </div>
         </div>
-    </section>
+        
+        <div class="expand-image-card">
+            <img src="img/banner3.png" alt="Presentasi Materi">
+            <div class="expand-card-content">
+                <div class="expand-icon"><i class="fas fa-laptop-code"></i></div>
+                <h4>Presentasi Materi</h4>
+                <p class="desc">Pemaparan materi literasi dan etika digital di depan kelas dengan media presentasi menarik.</p>
+            </div>
+        </div>
+
+        <div class="expand-image-card">
+            <img src="img/banner4.png" alt="Evaluasi Belajar">
+            <div class="expand-card-content">
+                <div class="expand-icon"><i class="fas fa-clipboard-check"></i></div>
+                <h4>Evaluasi Belajar</h4>
+                <p class="desc">Momen refleksi dan pengerjaan kuis interaktif di akhir siklus pembelajaran.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="gallery-action">
+        <a href="#semua-foto" class="btn-hero btn-primary">
+            Selengkapnya <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+</section>
+    
 
     <footer class="glass-footer">
         <div class="footer-content">
             <div class="footer-col">
                 <h3>E-Portofolio PPG</h3>
                 <p>Ruang rekam jejak Praktik Pengalaman Lapangan (PPL) 1. Disusun sebagai dokumentasi dan refleksi perjalanan menjadi guru profesional.</p>
-            <br>
-            <br>
-                <div class="footer-col">
-
-            <div class="social-links">
-                <a href="#" class="social-icon" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#" class="social-icon" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" class="social-icon" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
-                <a href="#" class="social-icon" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                <div class="social-links" style="margin-top: 20px;">
+                    <a href="#" class="social-icon" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-icon" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#" class="social-icon" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                </div>
             </div>
-        </div>
-            </div>
-
             <div class="footer-col">
                 <h3>Navigasi Cepat</h3>
                 <ul class="footer-links">
-                    <li><a href="#">Beranda</a></li>
-                    <li><a href="#">Profil Saya</a></li>
-                    <li><a href="#">Hasil Observasi</a></li>
-                    <li><a href="#">Modul Ajar</a></li>
-                    <li><a href="#">LKPD</a></li>
+                    <li><a href="#beranda">Beranda</a></li>
+                    <li><a href="profil.html">Profil Saya</a></li>
+                    <li><a href="#observasi">Hasil Observasi</a></li>
+                    <li><a href="#modul">Modul Ajar</a></li>
+                    <li><a href="#lkpd">LKPD</a></li>
                 </ul>
             </div>
-
             <div class="footer-col">
                 <h3>Lokasi LPTK</h3>
-                
                 <div class="map-container">
                     <iframe 
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.0981358052166!2d110.3845946152542!3d-7.768783494399778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a59b2d4729729%3A0xac4d7b5fdf34f8e!2sUniversitas%20Negeri%20Yogyakarta!5e0!3m2!1sid!2sid!4v1699000000000!5m2!1sid!2sid" 
-                        width="100%" 
-                        height="155" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
+                        width="100%" height="155" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
-
-                <p><i class="fas fa-map-marker-alt" style="color: var(--accent-blue); margin-right: 8px;"></i> Universitas Negeri Yogyakarta</p>
+                <p style="margin-top: 10px;"><i class="fas fa-map-marker-alt" style="color: var(--accent-blue); margin-right: 8px;"></i> Universitas Negeri Yogyakarta</p>
             </div>
         </div>
-
         <div class="footer-bottom">
-            <p>&copy; 2026 Nur Isnanto Nugroho. All Rights Reserved.</p>
+            <p>© 2026 Nur Isnanto Nugroho. All Rights Reserved.</p>
         </div>
     </footer>
 
-</body>
-
 <script>
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.glass-navbar');
-            // Jika halaman di-scroll lebih dari 50px ke bawah
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
+document.addEventListener('DOMContentLoaded', function() {
 
-        const kursor = document.querySelector('.kursor-warna');
+    // =========================================
+    // 1. MENGHILANGKAN LOADING SCREEN
+    // =========================================
+    const loadingScreen = document.getElementById('loading-screen');
+    if (loadingScreen) {
+        setTimeout(() => {
+            loadingScreen.classList.add('hidden');
+        }, 1500); 
+    }
 
-
-
- // 1. Mouse Trail Effect
-        document.addEventListener('mousemove', function(e) {
-            const trail = document.getElementById('mouse-trail');
-            trail.style.setProperty('--x', e.clientX + 'px');
-            trail.style.setProperty('--y', e.clientY + 'px');
-        });
-
-        // 2. Immersive Blob Movement on Cursor & Scroll
-        const blobContainer = document.querySelector('.blob-container');
+    // =========================================
+    // 2. EFEK BACKGROUND BLOB (PARALLAX)
+    // =========================================
+    const blobContainer = document.querySelector('.blob-container');
+    if (blobContainer) {
         document.addEventListener('mousemove', function(e) {
             const x = e.clientX / window.innerWidth - 0.5;
             const y = e.clientY / window.innerHeight - 0.5;
             blobContainer.style.setProperty('--xOffset', `${x * 100}px`);
             blobContainer.style.setProperty('--yOffset', `${y * 100}px`);
         });
+    }
 
-        // 3. Scroll-Driven Reveal Animations (Advanced Multi-Stage)
-        const reveals = document.querySelectorAll(".is-scroll-reveal");
-        function revealOnScroll() {
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 150; // Trigger distance
+    // =========================================
+    // 3. MOUSE TRAIL EFFECT (Titik mengikuti kursor)
+    // =========================================
+    const trail = document.getElementById('mouse-trail');
+    if (trail) {
+        document.addEventListener('mousemove', function(e) {
+            trail.style.setProperty('--x', e.clientX + 'px');
+            trail.style.setProperty('--y', e.clientY + 'px');
+        });
+    }
 
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
-                }
+    // =========================================
+    // 4. EFEK SCROLL NAVBAR (Transparan ke Solid)
+    // =========================================
+    const navbar = document.querySelector('.glass-navbar');
+    if (navbar) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    }
+
+    // =========================================
+    // 5. AUTO-REVEAL & SCROLL REVEAL (Animasi Muncul)
+    // =========================================
+    const elemenOtomatis = document.querySelectorAll('h2, h3, p, .description, .subtitle, #statistik-section, .statistik-section, .stat-item-glass, .glass-stats-container, .glass-card-mini, .info-ppl, .expand-grid-container, .scrolling-banner, .gallery-action');
+    
+    // Tambahkan class dasar ke semua elemen yang dipilih
+    elemenOtomatis.forEach(elemen => {
+        elemen.classList.add('is-scroll-reveal');
+    });
+
+    const reveals = document.querySelectorAll(".is-scroll-reveal");
+    function revealOnScroll() {
+        for (let i = 0; i < reveals.length; i++) {
+            let windowHeight = window.innerHeight;
+            let elementTop = reveals[i].getBoundingClientRect().top;
+            let elementVisible = 50; 
+            if (elementTop < windowHeight - elementVisible) {
+                reveals[i].classList.add("active");
             }
         }
-        window.addEventListener("scroll", revealOnScroll);
-        // Initial trigger to show elements above the fold
-        revealOnScroll(); 
+    }
+    window.addEventListener("scroll", revealOnScroll);
+    setTimeout(revealOnScroll, 100); // Panggil sekali saat web pertama dibuka
 
-        // Menunggu seluruh aset halaman selesai dimuat
-  window.addEventListener('load', function() {
-    const loadingScreen = document.getElementById('loading-screen');
+    // =========================================
+    // 6. EFEK KARTU DOKUMENTASI EXPAND (Lebar saat dihover)
+    // =========================================
+    const expandCards = document.querySelectorAll('.expand-image-card');
+    if (expandCards.length > 0) {
+        expandCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                expandCards.forEach(c => c.classList.remove('active'));
+                card.classList.add('active');
+            });
+        });
+    }
+
+    // =========================================
+    // 7. LOGIKA GALERI / MODAL (Pop-up Gambar)
+    // =========================================
+    const cards = document.querySelectorAll('.gallery-card');
+    const modal = document.getElementById('galleryModal');
+    const closeModalBtn = document.getElementById('closeModal');
+    const modalImg = document.getElementById('modalImg');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDesc = document.getElementById('modalDesc');
+
+    if (modal && closeModalBtn && cards.length > 0) {
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                if(modalImg) modalImg.src = card.getAttribute('data-img');
+                if(modalTitle) modalTitle.textContent = card.getAttribute('data-title');
+                if(modalDesc) modalDesc.textContent = card.getAttribute('data-desc');
+                modal.classList.add('show-modal');
+            });
+        });
+
+        closeModalBtn.addEventListener('click', () => modal.classList.remove('show-modal'));
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) modal.classList.remove('show-modal');
+        });
+    }
+
+    // =========================================
+    // 8. MENU HAMBURGER & DROPDOWN DI MOBILE
+    // =========================================
+    const hamburgerBtn = document.querySelector('.hamburger');
+    const menuLinks = document.querySelector('.nav-links');
+    const menuItems = document.querySelectorAll('.nav-item'); 
+
+    if (hamburgerBtn && menuLinks) {
+        // Klik tombol hamburger
+        hamburgerBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Mencegah klik bocor ke elemen bawahnya
+            menuLinks.classList.toggle('slide-active');
+            
+            // Ubah Ikon Garis Tiga <-> X
+            const icon = hamburgerBtn.querySelector('i');
+            if (icon) {
+                if (menuLinks.classList.contains('slide-active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            }
+        });
+
+        // Tutup menu saat klik sembarang di luar navbar
+        document.addEventListener('click', (e) => {
+            if (!menuLinks.contains(e.target) && !hamburgerBtn.contains(e.target)) {
+                menuLinks.classList.remove('slide-active');
+                const icon = hamburgerBtn.querySelector('i');
+                if(icon && icon.classList.contains('fa-times')){
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            }
+        });
+
+        // Tutup menu saat salah satu link diklik (Kecuali dropdown Artefak)
+        menuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                if (!item.parentElement.classList.contains('dropdown')) {
+                    menuLinks.classList.remove('slide-active');
+                    const icon = hamburgerBtn.querySelector('i');
+                    if(icon) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                }
+            });
+        });
+    }
+
+    // Buka/Tutup menu "Artefak" di dalam Hamburger
+    const dropBtn = document.querySelector('.dropdown > a');
+    const dropParent = document.querySelector('.dropdown');
     
-    // Memberikan jeda agar pengguna bisa melihat animasi logo yang keren
-    setTimeout(() => {
-      loadingScreen.classList.add('hidden');
-    }, 1500); // Jeda 1.5 detik (sesuaikan selera)
-  });
-    </script>
+    if (dropBtn && dropParent) {
+        dropBtn.addEventListener('click', (e) => {
+            if (window.innerWidth <= 992) {
+                e.preventDefault(); // Jangan langsung scroll ke bagian artefak
+                dropParent.classList.toggle('active');
+            }
+        });
+    }
 
+}); // Penutup DOMContentLoaded (Jangan Dihapus)
+</script>
+</body>
 </html>

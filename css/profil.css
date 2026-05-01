@@ -39,6 +39,63 @@
     font-family: 'Poppins', sans-serif;
 }
 
+/* =========================================
+   INTERACTIVE LAYERS ( Mouse Trail & Blobs )
+========================================= */
+.mouse-trail {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    pointer-events: none;
+    z-index: 1000;
+}
+.mouse-trail::after {
+    content: '';
+    position: absolute;
+    top: var(--y, 0); left: var(--x, 0);
+    width: 15px; height: 15px;
+    background: var(--accent-1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 40px 10px rgba(6, 182, 212, 0.4), 
+                0 0 80px 20px rgba(6, 182, 212, 0.2);
+    opacity: 0.8;
+}
+
+.background-canvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.blob-container {
+    width: 100%; height: 100%;
+    transform: translate(var(--xOffset, 0), var(--yOffset, 0));
+    will-change: transform;
+}
+
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.3;
+    animation: blob-flow infinite alternate-reverse ease-in-out;
+}
+
+.blob-1 { width: 50vw; height: 50vw; background: var(--accent-1); top: -20%; left: -10%; animation-duration: 20s; }
+.blob-2 { width: 40vw; height: 40vw; background: var(--accent-2); bottom: -10%; right: -10%; animation-duration: 25s; }
+.blob-3 { width: 30vw; height: 30vw; background: var(--accent-3); top: 40%; left: 40%; opacity: 0.15; animation-duration: 30s; }
+.blob-4 { width: 45vw; height: 45vw; background: #ea580c; bottom: 40%; left: 10%; opacity: 0.1; animation-duration: 35s; }
+
+@keyframes blob-flow {
+    0% { transform: scale(1) translate(0, 0) rotate(0deg); border-radius: 50%; }
+    33% { transform: scale(1.1) translate(100px, 50px) rotate(120deg); border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+    66% { transform: scale(0.9) translate(-50px, 100px) rotate(240deg); border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+    100% { transform: scale(1) translate(0, 0) rotate(360deg); border-radius: 50%; }
+}
+
 main {
     background-color: var(--bg-main);
     min-height: 100vh;
@@ -60,10 +117,11 @@ main {
 .glass-navbar {
     position: fixed;
     top: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 100%;
     height: 80px;
-    background: var(--glass-bg);
+    background: rgba(15, 23, 42, 0.6);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     border-bottom: 1px solid var(--glass-border);
@@ -71,7 +129,18 @@ main {
     justify-content: space-between;
     align-items: center;
     padding: 0 5%;
-    z-index: 999; 
+    z-index: 999;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); 
+}
+
+.glass-navbar.scrolled {
+    top: 20px;
+    width: 90%;
+    max-width: 1400px;
+    border-radius: 25px;
+    border: 1px solid var(--glass-border-strong);
+    background: rgba(15, 23, 42, 0.6);
+    box-shadow: var(--shadow-md);
 }
 
 .nav-brand {
@@ -79,9 +148,8 @@ main {
     align-items: center;
     gap: 15px;
     color: var(--text-light);
+    margin-left: 70px;
 }
-
-
 
 .logo-placeholder img{
     width: 50px;
@@ -97,6 +165,37 @@ main {
     display: flex;
     list-style: none;
     gap: 25px;
+    margin-right: 70px;
+}
+
+.tombol-animasi {
+  padding: 10px 20px;
+  font-size: 100px;
+  background-color: transparent;
+  border: 5;
+  cursor: pointer;
+  position: relative; 
+}
+
+.tombol-animasi::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var( --accent-blue);
+  transform: scaleX(0);
+  transform: scaleY(0);
+  transform-origin: bottom right; 
+  transition: transform 0.5s ease-out; 
+}
+
+.tombol-animasi:hover::after,
+.tombol-animasi:active::after {
+  transform: scaleX(1); 
+  transform: scaleY(1); 
+  transform-origin: bottom left;
 }
 
 .nav-menu li a {
@@ -125,12 +224,13 @@ main {
     background: var(--glass-bg-hover);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    min-width: 200px;
+    min-width: 200px; 
     border-radius: 15px;
     border: 1px solid var(--glass-border-strong);
     box-shadow: var(--shadow-md);
     list-style: none;
     padding: 10px 0;
+    margin-top: -10px;
     z-index: 1000;
     opacity: 0;
     transform: translateY(-10px);
@@ -162,6 +262,7 @@ main {
     background: var(--glass-border);
     color: var(--text-light);
 }
+
 
 /* =========================================
    DEKORASI ABSTRAK FULL LAYAR 

@@ -9,12 +9,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <div class="mouse-trail" id="mouse-trail"></div>
 
-    <div class="circle circle-1"></div>
-    <div class="circle circle-2"></div>
-    <div class="circle circle-3"></div>
+    <div class="background-canvas">
+        <div class="blob-container">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+            <div class="blob blob-4"></div>
+        </div>
+    </div>
+
 
     <header>
+        
         <nav class="glass-navbar">
         <div class="nav-brand">
             <div class="logo-placeholder"><img src="img/logo uny.png" alt=""></div>
@@ -181,14 +189,32 @@
         </div>
     </footer>
     <script>
-    const banner = document.querySelector('.banner-section');
-    const main = document.querySelector('main');
-    window.addEventListener('scroll', () => {
-        let scrollValue = window.scrollY;
-        let maxOverlap = 180; // piksel maksimal overlap
-        let overlap = Math.min(scrollValue * 0.6, maxOverlap); // *0.6 biar smooth
-        main.style.marginTop = `-${60 + overlap}px`; // 60px awal + tambahan scroll
-    });
+    // 1. Mouse Trail Effect
+        document.addEventListener('mousemove', function(e) {
+            const trail = document.getElementById('mouse-trail');
+            trail.style.setProperty('--x', e.clientX + 'px');
+            trail.style.setProperty('--y', e.clientY + 'px');
+        });
+        // 2. Immersive Blob Movement on Cursor & Scroll
+        const blobContainer = document.querySelector('.blob-container');
+        document.addEventListener('mousemove', function(e) {
+            const x = e.clientX / window.innerWidth - 0.5;
+            const y = e.clientY / window.innerHeight - 0.5;
+            blobContainer.style.setProperty('--xOffset', `${x * 100}px`);
+            blobContainer.style.setProperty('--yOffset', `${y * 100}px`);
+        });
+
+    window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.glass-navbar');
+            // Jika halaman di-scroll lebih dari 50px ke bawah
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        const kursor = document.querySelector('.kursor-warna');
 </script>
 </body>
 </html>
