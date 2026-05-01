@@ -677,7 +677,7 @@ main { min-height: 100vh; display: flex; align-items: center; justify-content: c
         padding: 0 5%;
     }
     .glass-stats-container {
-        flex-direction: row !important;
+        flex-direction: row;
         flex-wrap: wrap;
         gap: 20px;
         padding: 20px 15px;
@@ -829,7 +829,7 @@ main { min-height: 100vh; display: flex; align-items: center; justify-content: c
     }
     .glass-card .badge-hero {
         padding: 4px 10px;
-        margin-left: 55px;
+        margin-left: 80px;
         margin-top: 20px;
     }
     .btn-hero {
@@ -846,18 +846,18 @@ main { min-height: 100vh; display: flex; align-items: center; justify-content: c
     .glass-card h1 {
         font-size: 20px !important;
         margin-left: 50px;
-        top: -390px;
+        top: -420px;
     }
     .glass-card p {
         font-size: 16px;
-        width: 350px;
+        width: 250px;
         margin-bottom: 20px;
         margin-left: 75px;
         margin-top: -70px;
     }
     .hero-buttons {
         display: flex;
-        margin-left: 150px;
+        margin-left: 100px;
         justify-content: center;
         gap: 12px;
         width: 200px;
@@ -870,6 +870,7 @@ main { min-height: 100vh; display: flex; align-items: center; justify-content: c
         width: 230px;
         height: auto;
         opacity: 0.15;
+        left: 60px;
         top: 240px;
         transform: translate(-50%, -50%);
     }
