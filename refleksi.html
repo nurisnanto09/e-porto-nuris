@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Guru | Nur Isnanto Nugroho</title>
+    <link rel="shortcut icon" href="img/logo uny.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/model-guru.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="mouse-trail" id="mouse-trail"></div>
+
+    <div class="background-canvas">
+        <div class="blob-container">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+            <div class="blob blob-4"></div>
+        </div>
+    </div>
+
+    <header class="header-utama">
+        <nav class="navbar glass-navbar scrolled">
+            <a href="index.html" class="logo">
+                <img src="img/logo uny.png" alt="UNY">
+                E-Portofolio <span class="badge-ppg">PPG</span>
+            </a>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-item">Beranda</a></li>
+                
+                <li class="dropdown">
+                    <a href="#" class="nav-item">Jurnal UTS <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="profil.html"><i class="fas fa-user"></i> Profil Mahasiswa</a></li>
+                        <li><a href="observasi.html"><i class="fas fa-magnifying-glass"></i> Hasil Observasi</a></li>
+                        <li><a href="analisis.html"><i class="fas fa-clipboard-list"></i> Analisis Artefak</a></li>
+                        <li><a href="penilaian.html"><i class="fas fa-check-square"></i> Instrumen Penilaian</a></li>
+                        <li><a href="model-guru.html" style="color: var(--accent-cyan);"><i class="fas fa-chalkboard-teacher"></i> Model Guru</a></li>
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="nav-item">Jurnal UAS <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="refleksi.html"><i class="fas fa-lightbulb"></i> Refleksi Akhir</a></li>
+                        <li><a href="filosofi.html"><i class="fas fa-book-open"></i> Filosofi Mengajar</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="dokumentasi.html" class="nav-item">Dokumentasi</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="profil-banner" id="banner-section">
+        <img src="img/banner4.png" alt="Banner Default" class="banner-img">
+        <div class="banner-overlay"></div>
+        <div class="banner-text reveal">
+            <h1>Sosok Guru Profesional</h1>
+            <p>Rancangan identitas, visi, dan komitmen berkelanjutan dalam mencerdaskan kehidupan bangsa.</p>
+        </div>
+    </section>
+
+<main class="profil-content-wrapper" style="max-width: 1200px; margin: 65vh auto 0 auto; padding: 0 5% 50px 5%;">
+        
+        <section class="section-profil" id="evolusi" style="padding-top: 20px;">
+            <div class="section-header text-center is-scroll-reveal">
+                <h2 class="section-title">Evolusi <span class="text-cyan">Pembelajaran</span></h2>
+                <div class="title-line"></div>
+                <p class="sub-subtitle">Jejak pengalaman belajar selama melaksanakan siklus PPL 1.</p>
+            </div>
+
+            <div class="glass-box timeline-glass-container is-scroll-reveal">
+                <div class="timeline-header" style="display: flex; align-items: center; gap: 15px; margin-bottom: 40px;">
+                    <div class="icon-box-blue"><i class="fas fa-route"></i></div>
+                    <h3 style="color: #fff; font-size: 1.3rem;">Jejak PPL Terbimbing</h3>
+                </div>
+
+                <div class="timeline-horizontal">
+                    <div class="timeline-line-bg"></div>
+                    <div class="timeline-step">
+                        <div class="timeline-node"><i class="fas fa-compass"></i></div>
+                        <h4 class="step-title">Orientasi</h4>
+                        <p class="step-desc teks-justify">Mengenal ekosistem, kultur, dan manajemen digital SMAN 4 Yogyakarta, serta membangun sinergi awal dengan Dosen dan Guru Pamong.</p>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-node"><i class="fas fa-magnifying-glass"></i></div>
+                        <h4 class="step-title">Observasi</h4>
+                        <p class="step-desc teks-justify">Memetakan karakteristik peserta didik secara umum dan mendata kesiapan BYOD serta skill digital awal di kelas.</p>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-node"><i class="fas fa-pen-nib"></i></div>
+                        <h4 class="step-title">Asistensi</h4>
+                        <p class="step-desc teks-justify">Membantu mengelola kelas, serta mulai menyusun draf perangkat ajar yang menyesuaikan gaya belajar siswa.</p>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-node"><i class="fas fa-person-chalkboard"></i></div>
+                        <h4 class="step-title">Praktik Mengajar</h4>
+                        <p class="step-desc teks-justify">Mengimplementasikan Modul Ajar berbasis <em>Project-Based Learning</em> dan membimbing desain konten digital.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-profil" id="tantangan">
+            <div class="section-header text-center is-scroll-reveal">
+                <h2 class="section-title">Dinamika <span class="text-cyan">Kelas</span></h2>
+                <div class="title-line"></div>
+            </div>
+
+            <div class="tantangan-solusi-grid is-scroll-reveal">
+                <div class="glass-box tantangan-kiri">
+                    <div class="icon-box-orange"><i class="fas fa-bolt"></i></div>
+                    <h3 style="color: #fff; font-size: 1.3rem; margin: 20px 0 15px;">Tantangan Lapangan</h3>
+                    <p class="teks-justify" style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 25px;">Dinamika ruang kelas yang tak terduga memaksa saya untuk lebih adaptif dalam mencari resolusi pembelajaran.</p>
+                    <ul class="list-tantangan">
+                        <li><i class="fas fa-arrow-right text-orange"></i> <span>Jam pelajaran rawan (jam terakhir/siang).</span></li>
+                        <li><i class="fas fa-arrow-right text-orange"></i> <span>Fokus siswa yang mudah terdistraksi gawai.</span></li>
+                        <li><i class="fas fa-arrow-right text-orange"></i> <span>Gap keterampilan aplikasi (Canva/CapCut) antar siswa.</span></li>
+                    </ul>
+                    <p class="hint-text" style="margin-top: 30px; font-size: 0.85rem; color: var(--text-muted); opacity: 0.7;">
+                        <i class="fas fa-arrow-right"></i> Arahkan kursor ke kartu di samping
+                    </p>
+                </div>
+
+                <div class="glass-box solusi-kanan-interaktif">
+                    <div class="solusi-front">
+                        <div class="warning-badge"><i class="fas fa-triangle-exclamation"></i> PERMASALAHAN UTAMA</div>
+                        <h3 style="color: #fff; font-size: 1.4rem; margin-bottom: 15px;">Penurunan Fokus & Gap Keterampilan</h3>
+                        <p class="teks-justify" style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">Informatika yang sering terjadwal di jam akhir membuat fokus siswa turun drastis. Selain itu, saat pengerjaan proyek konten digital, terlihat kesenjangan di mana ada siswa yang sangat mahir, namun ada pula yang kesulitan memulai.</p>
+                        <div class="hover-hint-kanan">
+                            <i class="fas fa-hand-pointer blink-icon"></i> Hover untuk Solusi
+                        </div>
+                    </div>
+                    <div class="solusi-reveal-layer">
+                        <div class="success-badge"><i class="fas fa-lightbulb"></i> RESOLUSI PEDAGOGIS</div>
+                        <h3 style="color: #fff; font-size: 1.4rem; margin-bottom: 15px;">PjBL Terstruktur & Peer Tutoring</h3>
+                        <p class="teks-justify" style="color: #f8fafc; font-size: 0.95rem; line-height: 1.7;">Saya menyiasati kebosanan dengan <em>Ice-Breaking</em> kinestetik. Untuk mengatasi gap keterampilan, LKPD didesain dengan spesifikasi peran, dan saya terapkan <strong>Peer Tutoring</strong> agar siswa mahir menjadi tutor sebaya bagi kelompoknya.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-profil" id="umpan-balik">
+            <div class="section-header text-center is-scroll-reveal">
+                <h2 class="section-title">Umpan Balik <span class="text-cyan">Konstruktif</span></h2>
+                <div class="title-line"></div>
+            </div>
+
+            <div class="umpan-balik-grid is-scroll-reveal">
+                <div class="glass-box quote-kiri">
+                    <div class="icon-box-purple"><i class="fas fa-bullhorn"></i></div>
+                    <h3 style="color: #fff; font-size: 1.3rem; margin: 20px 0 10px;">Catatan Refleksi</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 25px;">Evaluasi bersama Dosen Pembimbing dan Guru Pamong.</p>
+
+                    <div class="quote-container-glass">
+                        <i class="fas fa-quote-left quote-icon-bg"></i>
+                        <p class="teks-justify" style="color: #e2e8f0; font-style: italic; font-size: 1.05rem; line-height: 1.8; position: relative; z-index: 2;">"Secara pedagogis, penerapan TPACK dan penguasaan kelas sudah terlihat. Namun, manajemen waktu saat fase brainstorming ide di LKPD masih meleset. Instruksi proyek perlu dibuat lebih ringkas agar siswa tidak terlalu lama berdebat menentukan tema konten."</p>
+                        <div class="quote-author">- HASIL REFLEKSI BERSAMA</div>
+                    </div>
+                </div>
+
+                <div class="glass-box tindak-lanjut-kanan">
+                    <h3 style="color: #fff; font-size: 1.2rem; margin-bottom: 25px; display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-rocket text-cyan"></i> Tindakan Operasional
+                    </h3>
+                    <div class="tl-item-box">
+                        <div class="tl-icon"><i class="fas fa-stopwatch"></i></div>
+                        <div class="tl-text">
+                            <h4 style="color: #fff; font-size: 1rem; margin-bottom: 5px;">Manajemen Waktu Visual</h4>
+                            <p class="teks-justify" style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.6; margin: 0;">Menerapkan <em>Visual Timer</em> di layar proyektor saat sesi diskusi kelompok untuk mendisiplinkan alokasi waktu.</p>
+                        </div>
+                    </div>
+                    <div class="tl-item-box">
+                        <div class="tl-icon"><i class="fas fa-list-check"></i></div>
+                        <div class="tl-text">
+                            <h4 style="color: #fff; font-size: 1rem; margin-bottom: 5px;">Instruksi Micro-Steps</h4>
+                            <p class="teks-justify" style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.6; margin: 0;">Menyederhanakan instruksi kerja di LKPD menjadi langkah-langkah mikro yang lebih operasional dan mudah dieksekusi.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-profil" id="evaluasi-diri" style="margin-bottom: 30px;">
+            <div class="section-header text-center is-scroll-reveal">
+                <h2 class="section-title">Evaluasi & <span class="text-cyan">Tindak Lanjut</span></h2>
+                <div class="title-line"></div>
+                <p class="teks-justify sub-subtitle" style="max-width: 900px; margin: 20px auto 30px auto; color: var(--text-light); font-size: 1.05rem;">
+                    Filosofi saya berakar pada keyakinan bahwa pendidikan harus berpusat pada peserta didik (<em>student-centered learning</em>). Saya memposisikan diri bukan sebagai satu-satunya sumber kebenaran, melainkan sebagai fasilitator yang membantu siswa menemukan pola dan membangun pengetahuan mereka.
+                </p>
+            </div>
+
+            <div class="eval-rtl-sejajar is-scroll-reveal">
+                <div class="glass-box panel-menyatu">
+                    <h3 class="panel-title-khas"><i class="fas fa-scale-balanced text-cyan"></i> Refleksi PPL 1</h3>
+                    
+                    <div class="swot-inner-box" style="border-left: 4px solid #00ffcc; margin-bottom: 20px;">
+                        <h4 style="color: #00ffcc; margin-bottom: 10px;"><i class="fas fa-arrow-up"></i> Kekuatan (Strengths)</h4>
+                        <p class="teks-justify" style="color: var(--text-muted); margin: 0;">Penguasaan materi dan kemampuan merancang media pembelajaran berbasis teknologi yang interaktif. Mampu membangun kedekatan emosional (rapport) yang baik.</p>
+                    </div>
+                    
+                    <div class="swot-inner-box" style="border-left: 4px solid #ff4d4d;">
+                        <h4 style="color: #ff4d4d; margin-bottom: 10px;"><i class="fas fa-arrow-down"></i> Kelemahan (Weaknesses)</h4>
+                        <p class="teks-justify" style="color: var(--text-muted); margin: 0;">Manajemen waktu saat memfasilitasi diskusi kelompok masih perlu diperbaiki, serta implementasi pembelajaran berdiferensiasi yang belum maksimal.</p>
+                    </div>
+                </div>
+
+                <div class="glass-box panel-menyatu">
+                    <h3 class="panel-title-khas"><i class="fas fa-seedling text-cyan"></i> Rencana Tindak Lanjut</h3>
+                    
+                    <p class="teks-justify" style="margin-bottom: 25px; color: var(--text-light);">Komitmen konkret saya pasca-PPL 1:</p>
+                    
+                    <div class="rtl-item-sejajar">
+                        <i class="fas fa-check-circle text-cyan"></i>
+                        <p class="teks-justify" style="color: var(--text-muted); margin: 0;">Mengkaji teknik <strong>diferensiasi konten/proses</strong> agar RPP lebih ramah bagi seluruh tingkatan kognitif siswa.</p>
+                    </div>
+                    <div class="rtl-item-sejajar">
+                        <i class="fas fa-check-circle text-cyan"></i>
+                        <p class="teks-justify" style="color: var(--text-muted); margin: 0;">Memanfaatkan <em>timer</em> visual dan rubrik manajemen proyek untuk mengefektifkan transisi antar-kegiatan.</p>
+                    </div>
+                    <div class="rtl-item-sejajar">
+                        <i class="fas fa-check-circle text-cyan"></i>
+                        <p class="teks-justify" style="color: var(--text-muted); margin: 0;">Meningkatkan kolaborasi dengan rekan sejawat melalui kegiatan refleksi rutin (<em>Peer Observation</em>).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="pre-footer-bridge is-scroll-reveal" style="margin-top: 80px;">
+            <h3 style="color: var(--accent-cyan); font-size: 1.2rem; font-weight: 600; text-align: center;">--- Mari Ciptakan Pendidikan yang Menginspirasi ---</h3>
+            <p style="color: var(--text-muted); font-style: italic; text-align: center;">"Mendedikasikan ilmu pengetahuan untuk memajukan kualitas pendidikan Informatika di Indonesia."</p>
+        </div>
+
+    </main>
+
+    <footer class="glass-footer glass-footer-profil">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>E-Portofolio PPG</h3>
+                <p>Ruang rekam jejak Praktik Pengalaman Lapangan (PPL) 1. Disusun sebagai dokumentasi dan refleksi perjalanan menjadi guru profesional.</p>
+                <div class="social-links" style="margin-top: 20px;">
+                    <a href="#" class="social-icon" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-icon" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#" class="social-icon" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Navigasi Cepat</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="profil.html">Profil Saya</a></li>
+                    <li><a href="observasi.html">Hasil Observasi</a></li>
+                    <li><a href="#modul">Modul Ajar</a></li>
+                    <li><a href="#lkpd">LKPD</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Lokasi LPTK</h3>
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.0981358052166!2d110.3845946152542!3d-7.768783494399778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a59b2d4729729%3A0xac4d7b5fdf34f8e!2sUniversitas%20Negeri%20Yogyakarta!5e0!3m2!1sid!2sid!4v1699000000000!5m2!1sid!2sid"
+                        width="100%" height="155" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <p style="margin-top: 10px;"><i class="fas fa-map-marker-alt" style="color: var(--accent-blue); margin-right: 8px;"></i> Universitas Negeri Yogyakarta</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Nur Isnanto Nugroho. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // ==========================================
+        // 1. Efek Parallax pada Banner
+        // ==========================================
+        window.addEventListener('scroll', function() {
+            const banner = document.getElementById('banner-section');
+            if (banner) {
+                let scroll = window.scrollY;
+                let opacity = 1 - (scroll / 350);
+                banner.style.opacity = opacity > 0 ? opacity : 0;
+                banner.style.transform = `translateY(-${scroll * 0.3}px)`;
+            }
+        });
+
+        // ==========================================
+        // 2. Toggle Hamburger Menu (Versi Mobile)
+        // ==========================================
+        const hamburgerBtn = document.querySelector('.hamburger');
+        const menuLinks = document.querySelector('.nav-links');
+
+        if (hamburgerBtn && menuLinks) {
+            hamburgerBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                menuLinks.classList.toggle('slide-active');
+
+                const icon = hamburgerBtn.querySelector('i');
+                if (icon) {
+                    if (menuLinks.classList.contains('slide-active')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                }
+            });
+        }
+
+        // ==========================================
+        // 3. Efek Interaktif Background (Blob Mouse)
+        // ==========================================
+        const blobContainers = document.querySelectorAll('.blob-container');
+
+        document.addEventListener('mousemove', function(e) {
+            const x = e.clientX / window.innerWidth - 0.5;
+            const y = e.clientY / window.innerHeight - 0.5;
+
+            blobContainers.forEach(container => {
+                container.style.setProperty('--xOffset', `${x * 100}px`);
+                container.style.setProperty('--yOffset', `${y * 100}px`);
+            });
+        });
+
+        // ==========================================
+        // 4. Efek Ekor Kursor Menyala (Mouse Trail)
+        // ==========================================
+        const trail = document.getElementById('mouse-trail');
+
+        if (trail) {
+            document.addEventListener('mousemove', function(e) {
+                trail.style.setProperty('--x', e.clientX + 'px');
+                trail.style.setProperty('--y', e.clientY + 'px');
+            });
+        }
+
+        // ==========================================
+        // 5. Animasi Scroll Reveal
+        // ==========================================
+        document.addEventListener("DOMContentLoaded", function() {
+            const reveals = document.querySelectorAll(".reveal, .is-scroll-reveal");
+
+            const revealOptions = {
+                threshold: 0.15,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("active");
+                    }
+                });
+            }, revealOptions);
+
+            reveals.forEach(reveal => {
+                revealOnScroll.observe(reveal);
+            });
+
+            if ('scrollRestoration' in history) {
+                history.scrollRestoration = 'manual';
+            }
+            window.scrollTo(0, 0);
+        });
+
+        // ==========================================
+        // 6. Dropdown Toggle untuk Mobile
+        // ==========================================
+        const dropdownItems = document.querySelectorAll('.dropdown');
+
+        dropdownItems.forEach(dropdown => {
+            const link = dropdown.querySelector('.nav-item');
+            link.addEventListener('click', function(e) {
+                if (window.innerWidth <= 992) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    dropdown.classList.toggle('active');
+                }
+            });
+        });
+
+        document.addEventListener('click', function(e) {
+            if (window.innerWidth <= 992) {
+                dropdownItems.forEach(dropdown => {
+                    if (!dropdown.contains(e.target)) {
+                        dropdown.classList.remove('active');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Observasi | Nur Isnanto Nugroho</title>
+    <link rel="shortcut icon" href="img/logo uny.png" type="image/x-icon">
+    <!-- Panggil CSS Global yang sudah kita pisahkan sebelumnya -->
+    <link rel="stylesheet" href="css/observasi.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Efek Ekor Kursor -->
+    <div class="mouse-trail" id="mouse-trail"></div>
+
+    <!-- Background Blob Animasi -->
+    <div class="background-canvas">
+        <div class="blob-container">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+            <div class="blob blob-4"></div>
+        </div>
+    </div>
+
+    <!-- Header & Navigasi -->
+    <header class="header-utama">
+        <nav class="navbar glass-navbar scrolled">
+            <a href="index.html" class="logo">
+                <img src="img/logo uny.png" alt="UNY">
+                E-Portofolio <span class="badge-ppg">PPG</span>
+            </a>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+                        <ul class="nav-links">
+                <li><a href="index.html" class="nav-item">Beranda</a></li>
+                
+                <li class="dropdown">
+                    <a href="#" class="nav-item">Jurnal UTS <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="profil.html"><i class="fas fa-user"></i> Profil Mahasiswa</a></li>
+                        <li><a href="observasi.html"><i class="fas fa-magnifying-glass"></i> Hasil Observasi</a></li>
+                        <li><a href="analisis.html"><i class="fas fa-clipboard-list"></i> Analisis Artefak</a></li>
+                        <li><a href="penilaian.html"><i class="fas fa-check-square"></i> Instrumen Penilaian</a></li>
+                        <li><a href="model-guru.html"><i class="fas fa-chalkboard-teacher"></i> Model Guru</a></li>
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="nav-item">Jurnal UAS <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="refleksi.html"><i class="fas fa-lightbulb"></i> Refleksi Akhir</a></li>
+                        <li><a href="filosofi.html"><i class="fas fa-book-open"></i> Filosofi Mengajar</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="dokumentasi.html" class="nav-item">Dokumentasi</a></li>
+            </ul>
+        </nav>
+        </nav>
+    </header>
+
+    <!-- Banner Parallax Default -->
+    <section class="profil-banner" id="banner-section">
+        <img src="img/banner3.png" alt="Banner Default" class="banner-img">
+        <div class="banner-overlay"></div>
+        <div class="banner-text reveal">
+            <h1>Hasil Observasi</h1>
+            <p>Analisis dan evaluasi terhadap praktik pembelajaran di kelas</p>
+        </div>
+    </section>
+
+<main class="profil-content-wrapper">
+
+    <div class="obs-bento-grid">
+        <div class="glass-box bento-item">
+            <div class="icon-wrapper blue"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="bento-text">
+                <label>LOKASI PPL</label>
+                <h3>SMA Negeri 4 Yogyakarta</h3>
+                <p>Jl. Magelang Karangwaru Lor, Yogyakarta.</p>
+            </div>
+        </div>
+        
+        <div class="glass-box bento-item">
+            <div class="icon-wrapper cyan"><i class="fas fa-user-graduate"></i></div>
+            <div class="bento-text">
+                <label>MAHASISWA PPG</label>
+                <h3>Nur Isnanto Nugroho</h3>
+                <p>Informatika - Univ. Negeri Yogyakarta</p>
+            </div>
+        </div>
+        
+        <div class="glass-box bento-item">
+            <div class="icon-wrapper purple"><i class="fas fa-calendar-alt"></i></div>
+            <div class="bento-text">
+                <label>WAKTU PELAKSANAAN</label>
+                <h3>April - Mei 2026</h3>
+                <p>Observasi Awal PPL 1</p>
+            </div>
+        </div>
+    </div>
+        
+        <div class="section-header">
+            <h2 class="section-title">Analisis Observasi</h2>
+            <div class="title-line"></div>
+                <p class="sub-subtitle">Merupakan hasil observasi mendalam mengenai karakteristik dan kebutuhan peserta didik di SMA Negeri 4 Yogyakarta. Pemetaan profil belajar ini menjadi landasan strategis bagi saya.</p>
+        </div>
+
+        <div class="scouting-grid">
+            <div class="glass-box scout-card">
+                <div class="scout-header">
+                    <i class="fas fa-users-rays text-blue"></i>
+                    <h3>Karakteristik Peserta Didik</h3>
+                </div>
+                <ul class="scout-list">
+                    <li><i class="fas fa-check-circle text-blue"></i>
+                        <div><strong>Kesiapan BYOD:</strong><span>95% akurasi kelas, 87% siswa memiliki smartphone mumpuni.</span></div>
+                    </li>
+                    <li><i class="fas fa-laptop-code text-blue"></i>
+                        <div><strong>Skill Digital:</strong><span>28 siswa level intermediate (Canva/CapCut), 6 advanced siap jadi tutor sebaya.</span></div>
+                    </li>
+                    <li><i class="fas fa-shield-halved text-warning"></i>
+                        <div><strong>Literasi Keamanan:</strong><span>58% siswa belum mengaktifkan atau paham pentingnya 2FA.</span></div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="glass-box scout-card">
+                <div class="scout-header">
+                    <i class="fas fa-landmark-dome text-cyan"></i>
+                    <h3>Kultur & Lingkungan</h3>
+                </div>
+                <ul class="scout-list">
+                    <li><i class="fas fa-check-circle text-cyan"></i>
+                        <div><strong>Lingkungan Fisik:</strong><span>Nyaman dan bersih, namun tata letak kelas KKO kurang beraturan.</span></div>
+                    </li>
+                    <li><i class="fas fa-check-circle text-cyan"></i>
+                        <div><strong>Sosial & Religius:</strong><span>Kolaborasi guru harmonis, pembiasaan IMTAK rutin setiap hari.</span></div>
+                    </li>
+                    <li><i class="fas fa-exclamation-triangle text-warning"></i>
+                        <div><strong>Aspek Afektif:</strong><span>Sikap respek siswa terhadap guru perlu ditingkatkan.</span></div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="glass-box scout-card">
+                <div class="scout-header">
+                    <i class="fas fa-desktop text-purple"></i>
+                    <h3>Sarana & Prasarana</h3>
+                </div>
+                <ul class="scout-list">
+                    <li><i class="fas fa-check-circle text-purple"></i>
+                        <div><strong>Fasilitas:</strong><span>Didukung Proyektor LCD, CCTV, dan jaringan Wifi sekolah.</span></div>
+                    </li>
+                    <li><i class="fas fa-check-circle text-purple"></i>
+                        <div><strong>Ketersediaan PC Lab:</strong><span>Rasio 1:2 (1 PC untuk 2 anak), sangat mendukung Pair Programming.</span></div>
+                    </li>
+                    <li><i class="fas fa-exclamation-triangle text-warning"></i>
+                        <div><strong>Catatan:</strong><span>Proyektor sesekali blank screen, butuh media cadangan interaktif.</span></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section-header" style="margin-top: 80px;">
+            <h2 class="section-title">Laporan Observasi</h2>
+            <div class="title-line"></div>
+                <p class="sub-subtitle">Laporan komprehensif mengenai tata kelola manajemen sekolah. Melalui observasi ini, saya menelaah bagaimana kebijakan, sistem operasional, dan lingkungan sekolah</p>
+
+        </div>
+
+        <div class="doc-card glass-box">
+            <h3 class="doc-title"><i class="fa-solid fa-file-pdf text-danger"></i> 1. Laporan Observasi Manajemen Sekolah</h3>
+            <hr class="dashed-divider" />
+            <div class="pdf-container">
+                <iframe src="Dokumen/observasi1coba.pdf" title="Laporan 1" loading="lazy"></iframe>
+            </div>
+            <div class="pdf-actions">
+                <a href="Dokumen/observasi1coba.pdf" target="_blank" class="btn-hero btn-primary">
+                    <span>Buka di Jendela Baru</span>
+                    <i class="fa-solid fa-up-right-from-square"></i>
+                </a>
+                <a href="Dokumen/observasi1coba.pdf" download="Observasi_Manajemen_Sekolah.pdf" class="btn-hero btn-outline-cyan">
+                    <span>Unduh PDF</span>
+                    <i class="fa-solid fa-download"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="doc-card glass-box">
+            <h3 class="doc-title"><i class="fa-solid fa-file-pdf text-danger"></i> 2. Laporan Observasi Lingkungan Belajar</h3>
+            <hr class="dashed-divider" />
+            <div class="pdf-container">
+                <iframe src="Dokumen/observasi2coba.pdf" title="Laporan 2" loading="lazy"></iframe>
+            </div>
+            <div class="pdf-actions">
+                <a href="Dokumen/observasi2coba.pdf" target="_blank" class="btn-hero btn-primary">
+                    <span>Buka di Jendela Baru</span>
+                    <i class="fa-solid fa-up-right-from-square"></i>
+                </a>
+                <a href="Dokumen/observasi2coba.pdf" download="Observasi_Lingkungan_Belajar.pdf" class="btn-hero btn-outline-cyan">
+                    <span>Unduh PDF</span>
+                    <i class="fa-solid fa-download"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="modul" class="tab-content">
+        <div class="section-header">
+            <h2 class="section-title">Modul Ajar</h2>
+            <div class="title-line"></div>
+        </div>
+
+        <div class="modul-grid">
+        
+        <div class="glass-box scout-card">
+            <div class="scout-header">
+                <i class="fa-solid fa-bullseye text-cyan"></i>
+                <h3>Konteks Pengembangan</h3>
+            </div>
+            <div class="scout-list">
+                <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; margin: 0;">
+                   Modul dirancang untuk kelas <strong>Sepuluh Fase E SMAN 4 Yogyakarta</strong> dengan kesiapan perangkat <span class="text-cyan">BYOD yang sangat tinggi</span>. Meskipun hampir seluruh murid memiliki <strong>literasi digital yang tinggi</strong> dan sebagian besar menguasai <span class="text-cyan">Canva/CapCut</span> di level menengah, masih terdapat kesenjangan besar pada aspek <strong>keamanan digital</strong> akun mereka.
+                </p>
+            </div>
+        </div>
+
+        <div class="glass-box scout-card">
+            <div class="scout-header">
+                <i class="fa-solid fa-flag text-blue"></i>
+                <h3>Tujuan Pembelajaran</h3>
+            </div>
+            <div class="scout-list">
+                <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; margin: 0;">
+                    Membimbing murid agar mampu mendesain <span class="text-cyan">produk konten digital edukatif</span> (poster/video pendek), mendistribusikannya secara bijak ke <strong>media sosial</strong>, mengelola <strong>kolaborasi awan</strong> (<span class="text-cyan">Cloud Storage</span>) secara berkelompok, serta mengimplementasikan <strong>etika komunikasi</strong> dan perlindungan data pribadi.
+                </p>
+            </div>
+        </div>
+
+        <div class="glass-box scout-card">
+            <div class="scout-header">
+                <i class="fa-solid fa-rocket text-cyan"></i>
+                <h3>Kelebihan Pendekatan</h3>
+            </div>
+            <div class="scout-list">
+                <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; margin: 0;">
+                    Menggunakan model <strong>Project Based Learning (PjBL)</strong> dengan pendekatan Pembelajaran Mendalam dan <span class="text-cyan">integrasi TPACK</span> (Canva, CapCut, Google Drive, Wayground/Quizizz). Menerapkan <strong>Konsep Tiga M</strong> (Memahami, Mengaplikasikan, Merefleksikan) secara interaktif lewat metode <span class="text-cyan">Digital Gallery Walk</span>.
+                </p>
+            </div>
+        </div>
+
+        <div class="glass-box scout-card">
+            <div class="scout-header">
+                <i class="fa-solid fa-triangle-exclamation text-warning"></i>
+                <h3>Tantangan Pelaksanaan</h3>
+            </div>
+            <div class="scout-list">
+                <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; margin: 0;">
+                    Mengantisipasi <strong>variasi fokus siswa</strong> di jam akhir pelajaran lewat intervensi <span class="text-cyan">ice-breaking</span>. Selain itu, modul ini memitigasi kendala fisik siswa yang melaporkan <strong>mata cepat lelah</strong> lewat edukasi posisi duduk ergonomis serta pengawasan aspek <span class="text-cyan">K3 kabel perangkat</span> di kelas.
+                </p>
+            </div>
+        </div>
+ </div>
+
+        <div class="doc-card glass-box">
+            <h3 class="doc-title"><i class="fa-solid fa-file-pdf text-danger"></i>Dokumen Modul Ajar</h3>
+            <hr class="dashed-divider" />
+            <div class="pdf-container">
+                <iframe src="Dokumen/observasi2coba.pdf" title="Laporan 2" loading="lazy"></iframe>
+            </div>
+            <div class="pdf-actions">
+                <a href="Dokumen/observasi2coba.pdf" target="_blank" class="btn-hero btn-primary">
+                    <span>Buka di Jendela Baru</span>
+                    <i class="fa-solid fa-up-right-from-square"></i>
+                </a>
+                <a href="Dokumen/observasi2coba.pdf" download="Observasi_Lingkungan_Belajar.pdf" class="btn-hero btn-outline-cyan">
+                    <span>Unduh PDF</span>
+                    <i class="fa-solid fa-download"></i>
+                </a>
+            </div>
+
+        </div>
+ </div>
+    <div id="lkpd" class="tab-content">
+        <div class="section-header">
+            <h2 class="section-title">Lembar Kerja Peserta Didik (LKPD)</h2>
+            <div class="title-line"></div>
+        </div>
+        </div>
+
+</main>
+
+<!-- Footer -->
+    <footer class="glass-footer glass-footer-profil">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>E-Portofolio PPG</h3>
+                <p>Ruang rekam jejak Praktik Pengalaman Lapangan (PPL) 1. Disusun sebagai dokumentasi dan refleksi perjalanan menjadi guru profesional.</p>
+                <div class="social-links" style="margin-top: 20px;">
+                    <a href="#" class="social-icon" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-icon" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#" class="social-icon" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Navigasi Cepat</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="profil.html">Profil Saya</a></li>
+                    <li><a href="observasi.html">Hasil Observasi</a></li>
+                    <li><a href="#modul">Modul Ajar</a></li>
+                    <li><a href="#lkpd">LKPD</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Lokasi LPTK</h3>
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.0981358052166!2d110.3845946152542!3d-7.768783494399778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a59b2d4729729%3A0xac4d7b5fdf34f8e!2sUniversitas%20Negeri%20Yogyakarta!5e0!3m2!1sid!2sid!4v1699000000000!5m2!1sid!2sid"
+                        width="100%" height="155" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <p style="margin-top: 10px;"><i class="fas fa-map-marker-alt" style="color: var(--accent-blue); margin-right: 8px;"></i> Universitas Negeri Yogyakarta</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Nur Isnanto Nugroho. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Panggil File JavaScript Global -->
+    <script>
+        // ==========================================
+        // 1. Efek Parallax pada Banner
+        // ==========================================
+        window.addEventListener('scroll', function() {
+            const banner = document.getElementById('banner-section');
+            if (banner) {
+                let scroll = window.scrollY;
+                // Mengurangi opasitas saat di-scroll ke bawah
+                let opacity = 1 - (scroll / 350);
+                banner.style.opacity = opacity > 0 ? opacity : 0;
+                // Memberi efek pergerakan yang lebih lambat dari scroll (parallax)
+                banner.style.transform = `translateY(-${scroll * 0.3}px)`;
+            }
+        });
+
+        // ==========================================
+        // 2. Toggle Hamburger Menu (Versi Mobile)
+        // ==========================================
+        const hamburgerBtn = document.querySelector('.hamburger');
+        const menuLinks = document.querySelector('.nav-links');
+
+        if (hamburgerBtn && menuLinks) {
+            hamburgerBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                menuLinks.classList.toggle('slide-active');
+
+                const icon = hamburgerBtn.querySelector('i');
+                if (icon) {
+                    if (menuLinks.classList.contains('slide-active')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                }
+            });
+        }
+
+        // ==========================================
+        // 3. Efek Interaktif Background (Blob Mouse)
+        // ==========================================
+        const blobContainers = document.querySelectorAll('.blob-container');
+
+        document.addEventListener('mousemove', function(e) {
+            // Menghitung posisi mouse dari tengah layar
+            const x = e.clientX / window.innerWidth - 0.5;
+            const y = e.clientY / window.innerHeight - 0.5;
+
+            blobContainers.forEach(container => {
+                container.style.setProperty('--xOffset', `${x * 100}px`);
+                container.style.setProperty('--yOffset', `${y * 100}px`);
+            });
+        });
+
+        // ==========================================
+        // 4. Efek Ekor Kursor Menyala (Mouse Trail)
+        // ==========================================
+        const trail = document.getElementById('mouse-trail');
+
+        if (trail) {
+            document.addEventListener('mousemove', function(e) {
+                trail.style.setProperty('--x', e.clientX + 'px');
+                trail.style.setProperty('--y', e.clientY + 'px');
+            });
+        }
+
+        // ==========================================
+        // 5. Animasi Scroll Reveal (Intersection Observer)
+        // ==========================================
+        document.addEventListener("DOMContentLoaded", function() {
+            const reveals = document.querySelectorAll(".reveal");
+
+            const revealOptions = {
+                threshold: 0.15,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("active");
+                    }
+                });
+            }, revealOptions);
+
+            reveals.forEach(reveal => {
+                revealOnScroll.observe(reveal);
+            });
+
+            // Mengembalikan scroll ke atas saat halaman direfresh
+            if ('scrollRestoration' in history) {
+                history.scrollRestoration = 'manual';
+            }
+            window.scrollTo(0, 0);
+        });
+
+        // ==========================================
+        // 6. Dropdown Toggle untuk Mobile
+        // ==========================================
+        const dropdownItems = document.querySelectorAll('.dropdown');
+
+        dropdownItems.forEach(dropdown => {
+            const link = dropdown.querySelector('.nav-item');
+            link.addEventListener('click', function(e) {
+                // Hanya aktif di perangkat mobile (lebar ≤ 992px)
+                if (window.innerWidth <= 992) {
+                    e.preventDefault();          // Mencegah link navigasi langsung
+                    e.stopPropagation();        // Mencegah event tumpang tindih
+                    dropdown.classList.toggle('active');
+                }
+            });
+        });
+
+        // Menutup dropdown jika klik di luar area dropdown (opsional)
+        document.addEventListener('click', function(e) {
+            if (window.innerWidth <= 992) {
+                dropdownItems.forEach(dropdown => {
+                    if (!dropdown.contains(e.target)) {
+                        dropdown.classList.remove('active');
+                    }
+                });
+            }
+        });
+
+    function openTab(btnElement, tabId) {
+        // 1. Sembunyikan semua konten tab
+        var contents = document.querySelectorAll('.tab-content');
+        contents.forEach(function(content) {
+            content.classList.remove('active');
+        });
+
+        // 2. Matikan nyala neon di semua tombol
+        var buttons = document.querySelectorAll('.tab-btn');
+        buttons.forEach(function(btn) {
+            btn.classList.remove('active');
+        });
+
+        // 3. Tampilkan konten yang ID-nya sesuai
+        document.getElementById(tabId).classList.add('active');
+
+        // 4. Nyalakan garis neon di tombol yang baru saja diklik
+        btnElement.classList.add('active');
+    }
+    </script>
+</body>
+</html>
