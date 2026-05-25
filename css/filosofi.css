@@ -463,33 +463,33 @@ body {
 }
 
 .literatur-flip-back p {
-    color: #fff;
+    color: var(--text-light);
     font-size: 0.92rem;
     line-height: 1.8;
 }
 
 .literatur-flip-back strong {
-    color: #fff;
-    background: rgba(0, 0, 0, 0.2);
-    padding: 2px 6px;
-    border-radius: 4px;
+    color: var(--accent-cyan);
 }
 
 .literatur-flip-back em {
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--text-light);
 }
 
-/* Gradient backgrounds for each card */
+/* Gradient backgrounds for each card (dark theme) */
 .gradient-purple {
-    background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 50%, #6d28d9 100%);
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.25) 0%, rgba(15, 23, 42, 0.95) 50%, rgba(167, 139, 250, 0.15) 100%);
+    border: 1px solid rgba(167, 139, 250, 0.3);
 }
 
 .gradient-blue {
-    background: linear-gradient(135deg, #2563eb 0%, #60a5fa 50%, #1d4ed8 100%);
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.25) 0%, rgba(15, 23, 42, 0.95) 50%, rgba(96, 165, 250, 0.15) 100%);
+    border: 1px solid rgba(96, 165, 250, 0.3);
 }
 
 .gradient-cyan {
-    background: linear-gradient(135deg, #0891b2 0%, #2dd4bf 50%, #0e7490 100%);
+    background: linear-gradient(135deg, rgba(45, 212, 191, 0.25) 0%, rgba(15, 23, 42, 0.95) 50%, rgba(6, 182, 212, 0.15) 100%);
+    border: 1px solid rgba(45, 212, 191, 0.3);
 }
 
 /* Icon (shared with front face) */
@@ -618,9 +618,9 @@ body {
     .hero-kiri .hero-desc { text-align: center; }
     .pulse-icon-wrap { margin: 0 auto; }
 
-    /* Literatur Grid */
-    .literatur-grid { grid-template-columns: 1fr; }
-    .literatur-bottom-grid { grid-template-columns: 1fr; }
+    /* Literatur Flip Cards */
+    .literatur-flip-grid { grid-template-columns: 1fr; }
+    .literatur-flip-card { height: 320px; }
 
     /* Ideologi Grid */
     .ideologi-grid { grid-template-columns: 1fr; }
