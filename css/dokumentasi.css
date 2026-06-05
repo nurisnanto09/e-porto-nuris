@@ -291,9 +291,9 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.92);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: rgba(0, 0, 0, 0.5); /* Layar belakang transparan blur */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     z-index: 10000;
     display: flex;
     align-items: center;
@@ -308,22 +308,34 @@ body {
     visibility: visible;
 }
 
+/* Kontainer utama */
 .lightbox-content {
     position: relative;
-    max-width: 85vw;
-    max-height: 85vh;
+    width: 85vw; /* Diberi ruang agar tidak menabrak tombol panah */
+    max-width: 1200px; /* DIPERLEBAR agar foto makin besar */
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    gap: 15px; 
+}
+
+/* Wrapper gambar di-set overflow hidden agar ujung caption mengikuti lengkungan border */
+.lightbox-img-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    overflow: hidden; 
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
 }
 
 .lightbox-img {
-    max-width: 100%;
-    max-height: 70vh;
-    object-fit: contain;
-    border-radius: 12px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+    width: 100%;
+    max-height: 80vh; /* TINGGI DITAMBAH karena caption sudah tidak makan tempat */
+    aspect-ratio: 16 / 9; /* Rasio landscape rata */
+    object-fit: cover;
     transition: transform 0.4s ease, opacity 0.3s ease;
     user-select: none;
 }
@@ -337,65 +349,79 @@ body {
     to { transform: scale(1); opacity: 1; }
 }
 
+/* --- CAPTION OVERLAY GABUNG DI FOTO --- */
 .lightbox-caption {
-    background: rgba(15, 23, 42, 0.85);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    padding: 15px 30px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     text-align: center;
-    max-width: 600px;
+    padding: 50px 20px 15px; /* Padding atas dibesarkan agar transisi gelapnya mulus */
+    /* Gradasi gelap dari bawah ke atas agar teks putih selalu terbaca */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
+    z-index: 5;
+    pointer-events: none; 
 }
 
 .lightbox-caption h4 {
-    font-size: 1rem;
+    font-size: 1.2rem; 
     font-weight: 600;
     color: #fff;
     margin-bottom: 5px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8); 
+}
+
+.lightbox-caption #lightboxDesc {
+    font-size: 0.95rem;
+    color: var(--text-light); 
+    margin-bottom: 8px;
+    line-height: 1.5;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .lightbox-caption .lightbox-counter {
     font-size: 0.85rem;
     color: var(--accent-cyan);
-    font-weight: 500;
+    font-weight: 600;
 }
+/* ---------------------------------- */
 
-/* Navigation arrows */
+/* --- TOMBOL NAVIGASI FIXED DI TEPI LAYAR --- */
 .lightbox-nav {
-    position: absolute;
+    position: fixed; 
     top: 50%;
     transform: translateY(-50%);
     width: 55px;
     height: 55px;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: white;
     cursor: pointer;
     transition: all 0.3s ease;
-    z-index: 10;
+    z-index: 10002;
     backdrop-filter: blur(5px);
 }
 
 .lightbox-nav:hover {
-    background: rgba(45, 212, 191, 0.3);
+    background: rgba(45, 212, 191, 0.8);
     border-color: var(--accent-cyan);
-    box-shadow: 0 0 20px rgba(45, 212, 191, 0.3);
+    box-shadow: 0 0 20px rgba(45, 212, 191, 0.4);
     transform: translateY(-50%) scale(1.1);
 }
 
-.lightbox-prev { left: -80px; }
-.lightbox-next { right: -80px; }
+.lightbox-prev { left: 3vw; } 
+.lightbox-next { right: 3vw; } 
 
 /* Close button */
 .lightbox-close {
     position: fixed;
-    top: 30px;
-    right: 40px;
+    top: 25px;
+    right: 3vw;
     width: 50px;
     height: 50px;
     background: rgba(255, 255, 255, 0.08);
@@ -408,7 +434,7 @@ body {
     color: white;
     cursor: pointer;
     transition: all 0.3s ease;
-    z-index: 10001;
+    z-index: 10002;
     backdrop-filter: blur(5px);
 }
 
@@ -424,8 +450,7 @@ body {
     gap: 8px;
     justify-content: center;
     flex-wrap: wrap;
-    max-width: 85vw;
-    padding-top: 10px;
+    max-width: 100%;
 }
 
 .lightbox-thumb {
@@ -465,14 +490,15 @@ body {
 
 .video-carousel-wrapper {
     position: relative;
-    max-width: 900px;
+    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 .video-player-container {
     position: relative;
     width: 100%;
-    padding-top: 56.25%; /* 16:9 ratio */
+    padding-top: 48%; /* <--- UBAH MENJADI LEBIH KECIL (Misal: 45%, 40%, atau 35%) */
     border-radius: 20px;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -565,108 +591,6 @@ body {
     pointer-events: none;
 }
 
-/* Video thumbnail list */
-.video-thumb-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 15px;
-    margin-top: 25px;
-}
-
-.video-thumb-card {
-    position: relative;
-    border-radius: 14px;
-    overflow: hidden;
-    cursor: pointer;
-    border: 2px solid rgba(255, 255, 255, 0.06);
-    background: rgba(255, 255, 255, 0.03);
-    transition: all 0.3s ease;
-}
-
-.video-thumb-card.active {
-    border-color: var(--accent-cyan);
-    box-shadow: 0 0 20px rgba(45, 212, 191, 0.25);
-}
-
-.video-thumb-card:hover {
-    border-color: rgba(255, 255, 255, 0.2);
-    transform: translateY(-4px);
-}
-
-.video-thumb-img {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
-}
-
-.video-thumb-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease;
-}
-
-.video-thumb-card:hover .video-thumb-img img {
-    transform: scale(1.08);
-}
-
-.video-play-icon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 40px;
-    height: 40px;
-    background: rgba(45, 212, 191, 0.85);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.9rem;
-    color: var(--bg-main);
-    box-shadow: 0 3px 12px rgba(45, 212, 191, 0.4);
-    opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.video-thumb-card:hover .video-play-icon,
-.video-thumb-card.active .video-play-icon {
-    opacity: 1;
-}
-
-.video-thumb-info {
-    padding: 10px 12px;
-}
-
-.video-thumb-info h5 {
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: #fff;
-    line-height: 1.3;
-    margin-bottom: 3px;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-.video-thumb-info span {
-    font-size: 0.7rem;
-    color: var(--text-muted);
-}
-
-/* Now Playing indicator */
-.video-thumb-card.active .video-thumb-info::before {
-    content: "▶ Sedang Diputar";
-    display: block;
-    font-size: 0.65rem;
-    color: var(--accent-cyan);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 5px;
-}
 
 /* =========================================
    10. FOOTER
@@ -757,9 +681,6 @@ body {
     .galeri-grid { grid-template-columns: repeat(2, 1fr); }
     .galeri-item.tall { grid-row: span 1; aspect-ratio: 4 / 3; }
 
-    /* Video */
-    .video-thumb-list { grid-template-columns: repeat(2, 1fr); }
-
     /* Lightbox */
     .lightbox-prev { left: 10px; }
     .lightbox-next { right: 10px; }
@@ -806,7 +727,6 @@ body {
     .galeri-item { aspect-ratio: 16 / 10; }
     .galeri-item.tall { aspect-ratio: 16 / 10; }
     
-    .video-thumb-list { grid-template-columns: 1fr; }
     .video-nav-controls { gap: 10px; }
     .video-nav-btn { padding: 10px 18px; font-size: 0.8rem; }
     

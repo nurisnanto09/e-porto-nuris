@@ -619,18 +619,68 @@ body {
 .list-tantangan { list-style: none; padding: 0; }
 .list-tantangan li { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 15px; color: var(--text-light); font-size: 0.95rem; line-height: 1.6; }
 
-.solusi-kanan-interaktif { position: relative; overflow: hidden; padding: 0; cursor: pointer; border-color: rgba(249, 115, 22, 0.3); }
-.solusi-front { padding: 50px 40px; height: 100%; transition: opacity 0.4s ease; }
+.solusi-kanan-interaktif { position: relative; overflow: hidden; padding: 0; cursor: pointer; border-color: rgba(249, 115, 22, 0.3); transition: border-color 0.5s ease, box-shadow 0.5s ease, transform 0.5s ease; }
+.solusi-kanan-interaktif::before {
+    content: ''; position: absolute; top: 50%; left: 50%; width: 20px; height: 20px;
+    background: radial-gradient(circle, rgba(6, 182, 212, 0.6) 0%, transparent 70%);
+    border-radius: 50%; transform: translate(-50%, -50%) scale(0); opacity: 0;
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s ease; z-index: 1; pointer-events: none;
+}
+.solusi-kanan-interaktif:hover::before {
+    transform: translate(-50%, -50%) scale(40); opacity: 1;
+}
+.solusi-front { padding: 50px 40px; height: 100%; transition: opacity 0.4s ease 0.1s, transform 0.5s ease, filter 0.5s ease; position: relative; z-index: 2; }
 .warning-badge { display: inline-block; padding: 6px 15px; background: rgba(249, 115, 22, 0.1); border: 1px solid rgba(249, 115, 22, 0.4); border-radius: 50px; color: #f97316; font-size: 0.75rem; font-weight: 700; margin-bottom: 20px; }
-.hover-hint-kanan { position: absolute; bottom: 20px; right: 30px; color: var(--accent-cyan); font-size: 0.9rem; font-weight: 500; }
+.hover-hint-kanan { position: absolute; bottom: 20px; right: 30px; color: var(--accent-cyan); font-size: 0.9rem; font-weight: 500; z-index: 3; }
 .blink-icon { animation: blinkAnim 1.5s infinite; }
 @keyframes blinkAnim { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
 
-.solusi-reveal-layer { position: absolute; bottom: -100%; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(6, 182, 212, 0.9), rgba(15, 23, 42, 0.95)); backdrop-filter: blur(10px); padding: 50px 40px; transition: bottom 0.5s cubic-bezier(0.25, 1, 0.5, 1); display: flex; flex-direction: column; justify-content: center; }
+.solusi-reveal-layer {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.85) 0%, rgba(15, 23, 42, 0.95) 60%, rgba(139, 92, 246, 0.3) 100%);
+    backdrop-filter: blur(12px); padding: 50px 40px;
+    clip-path: circle(0% at 50% 50%);
+    transition: clip-path 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    display: flex; flex-direction: column; justify-content: center; z-index: 5;
+}
+.solusi-reveal-layer .success-badge,
+.solusi-reveal-layer h3,
+.solusi-reveal-layer p {
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
 .success-badge { display: inline-block; padding: 6px 15px; background: rgba(255, 255, 255, 0.2); border: 1px solid rgba(255, 255, 255, 0.5); border-radius: 50px; color: #fff; font-size: 0.75rem; font-weight: 700; margin-bottom: 20px; }
-.solusi-kanan-interaktif:hover { border-color: var(--accent-cyan); box-shadow: 0 15px 35px rgba(6, 182, 212, 0.3); }
-.solusi-kanan-interaktif:hover .solusi-reveal-layer { bottom: 0; }
-.solusi-kanan-interaktif:hover .solusi-front { opacity: 0; }
+
+/* --- Hover State: Circular Reveal --- */
+.solusi-kanan-interaktif:hover {
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 25px rgba(6, 182, 212, 0.4), 0 20px 40px rgba(6, 182, 212, 0.2), inset 0 0 30px rgba(6, 182, 212, 0.05);
+    transform: translateY(-5px);
+}
+.solusi-kanan-interaktif:hover .solusi-reveal-layer {
+    clip-path: circle(150% at 50% 50%);
+}
+.solusi-kanan-interaktif:hover .solusi-reveal-layer .success-badge {
+    opacity: 1; transform: translateY(0); transition-delay: 0.3s;
+}
+.solusi-kanan-interaktif:hover .solusi-reveal-layer h3 {
+    opacity: 1; transform: translateY(0); transition-delay: 0.4s;
+}
+.solusi-kanan-interaktif:hover .solusi-reveal-layer p {
+    opacity: 1; transform: translateY(0); transition-delay: 0.5s;
+}
+.solusi-kanan-interaktif:hover .solusi-front {
+    opacity: 0; transform: scale(0.95); filter: blur(5px);
+}
+
+/* --- Glow Pulse Ring --- */
+@keyframes glowPulseRing {
+    0%, 100% { box-shadow: 0 0 15px rgba(6, 182, 212, 0.3), 0 20px 40px rgba(6, 182, 212, 0.15); }
+    50% { box-shadow: 0 0 30px rgba(6, 182, 212, 0.5), 0 20px 50px rgba(6, 182, 212, 0.3); }
+}
+.solusi-kanan-interaktif:hover {
+    animation: glowPulseRing 2s ease-in-out infinite;
+}
 
 /* --- UMPAN BALIK & TINDAK LANJUT --- */
 .umpan-balik-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 30px; align-items: stretch; }
@@ -646,7 +696,7 @@ body {
 .tl-item-box:hover .tl-icon { background: var(--accent-cyan); color: var(--bg-main); }
 
 /* --- EVALUASI DIRI & RTL (PANEL MENYATU) --- */
-.eval-rtl-sejajar { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: stretch; max-width: 1100px; margin: 0 auto; }
+.eval-rtl-sejajar { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: stretch; }
 .panel-menyatu { display: flex; flex-direction: column; padding: 40px; transition: transform 0.3s ease; }
 .panel-menyatu:hover { transform: translateY(-5px); border-color: var(--accent-cyan); }
 .panel-title-khas { font-size: 1.4rem; color: #fff; margin-bottom: 30px; padding-bottom: 15px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
